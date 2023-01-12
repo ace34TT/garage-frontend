@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainWindowComponent implements OnInit {
   name!: string;
-
   ngOnInit(): void {
     this.name = 'Thomas';
     throw new Error('Method not implemented.');
