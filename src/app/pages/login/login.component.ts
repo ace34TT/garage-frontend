@@ -17,8 +17,12 @@ export class LoginComponent {
       this.data = response;
     });
   }
+  goListRepair(): void {
+    console.log('goStatRep mihaja');
+    this.router.navigateByUrl('/listRepair');
+  }
   goStatRepair(): void {
     console.log('goStatRep mihaja');
-    this.router.navigateByUrl('statRepair');
+    this.router.navigateByUrl('/statRepair');
   }
 }
