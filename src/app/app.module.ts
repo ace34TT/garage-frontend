@@ -7,12 +7,17 @@ import { MainWindowComponent } from './components/main-window/main-window.compon
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+
+import { StatRepairComponent } from './components/stat-repair/stat-repair.component';
+import { ListRepairComponent } from './components/list-repair/list-repair.component';
 @NgModule({
   declarations: [
     AppComponent,
     MainWindowComponent,
     HomepageComponent,
     LoginComponent,
+    StatRepairComponent,
+    ListRepairComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
