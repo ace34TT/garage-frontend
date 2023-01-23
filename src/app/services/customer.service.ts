@@ -1,3 +1,4 @@
+import { ICarData } from './../interface/customer.schema';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { baseUrl } from './url';
@@ -10,14 +11,21 @@ export class CustomerService {
   constructor(private httpClient: HttpClient) {
     this.finalBaseUrl = baseUrl + 'customers/';
   }
-  loginCustomer(mydata: any) {
+  loginCustomer(credentials: any) {
     return this.httpClient.post(this.finalBaseUrl + '/login', {
       logAs: 'ctmr',
-      email: mydata.email,
-      password: mydata.password,
+      email: credentials.email,
+      password: credentials.password,
     });
   }
   getAllCustomer() {
     return this.httpClient.get(this.finalBaseUrl + '');
+  }
+
+  /*
+   * cars
+   */
+  depositCar(carData: ICarData) {
+    return this.httpClient.post(this.finalBaseUrl + '/', carData);
   }
 }

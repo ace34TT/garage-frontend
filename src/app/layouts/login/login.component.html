@@ -17,13 +17,14 @@
           <form
             action="#"
             class="login-form"
-            #userlogin="ngForm"
-            (ngSubmit)="login(userlogin.value)"
+            #userLogin="ngForm"
+            (ngSubmit)="login(userLogin.value)"
           >
             <div class="form-group">
               <input
                 type="email"
                 name="email"
+                value="tafinasoa35@gmail.com"
                 class="form-control rounded-left"
                 placeholder="E-mail"
                 required
@@ -36,6 +37,7 @@
                 name="password"
                 class="form-control rounded-left"
                 placeholder="Password"
+                value="lorem"
                 required
                 ngModel
               />
@@ -66,7 +68,3 @@
     </div>
   </div>
 </section>
-
-PHP is one of the programming languages used to build WordPress. Newer versions
-of PHP receive regular security updates and may increase your site’s
-performance. The minimum recommended version of PHP is 7.4.

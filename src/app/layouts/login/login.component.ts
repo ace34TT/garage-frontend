@@ -1,4 +1,4 @@
-import { CustomerService } from './../../services/customer.service';
+import { CustomerService } from '../../services/customer.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -19,7 +19,7 @@ export class LoginComponent {
         this.data = response;
         console.log('very enao');
         if (this.data.message) {
-          this.router.navigateByUrl('/listRepair');
+          this.router.navigateByUrl('/customer');
         }
       },
       (error) => {
@@ -27,10 +27,10 @@ export class LoginComponent {
       }
     );
   }
-  goListRepair(): void {
-    this.router.navigateByUrl('/listRepair');
-  }
-  goStatRepair(): void {
-    this.router.navigateByUrl('/statRepair');
-  }
+  // goListRepair(): void {
+  //   this.router.navigateByUrl('/listRepair');
+  // }
+  // goStatRepair(): void {
+  //   this.router.navigateByUrl('/statRepair');
+  // }
 }
