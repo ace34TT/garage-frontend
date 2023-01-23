@@ -8,7 +8,9 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent {
   constructor(private router: Router) {}
-  goLogin(): void {
-    this.router.navigateByUrl('/login');
+  signUp(data: any): void {
+    console.log('signUp ');
+    console.log(data);
+    // this.router.navigateByUrl('/login');
   }
 }

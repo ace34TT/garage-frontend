@@ -10,19 +10,27 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   data: any;
   constructor(private service: CustomerService, private router: Router) {}
-  ngOnInit() {
-    this.service.getAllCustomer().subscribe((response) => {
-      console.log('je suis dans login');
-      console.log(response);
-      this.data = response;
-    });
+  ngOnInit() {}
+
+  login(input: any): void {
+    console.log(input);
+    this.service.loginCustomer(input).subscribe(
+      (response) => {
+        this.data = response;
+        console.log('very enao');
+        if (this.data.message) {
+          this.router.navigateByUrl('/listRepair');
+        }
+      },
+      (error) => {
+        this.router.navigateByUrl('/login');
+      }
+    );
   }
   goListRepair(): void {
-    console.log('goStatRep mihaja');
     this.router.navigateByUrl('/listRepair');
   }
   goStatRepair(): void {
-    console.log('goStatRep mihaja');
     this.router.navigateByUrl('/statRepair');
   }
 }

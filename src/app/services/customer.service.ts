@@ -10,6 +10,13 @@ export class CustomerService {
   constructor(private httpClient: HttpClient) {
     this.finalBaseUrl = baseUrl + 'customers/';
   }
+  loginCustomer(mydata: any) {
+    return this.httpClient.post(this.finalBaseUrl + '/login', {
+      logAs: 'ctmr',
+      email: mydata.email,
+      password: mydata.password,
+    });
+  }
   getAllCustomer() {
     return this.httpClient.get(this.finalBaseUrl + '');
   }
