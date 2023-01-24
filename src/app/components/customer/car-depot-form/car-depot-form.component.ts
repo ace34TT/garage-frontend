@@ -11,7 +11,8 @@ export class CarDepotFormComponent {
   private data: any;
   constructor(private service: CustomerService) {}
   depositCar(carData: ICarData) {
-    alert('insert');
+    console.log(carData);
+
     this.service.depositCar(carData);
   }
 }

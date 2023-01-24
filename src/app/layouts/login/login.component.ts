@@ -14,23 +14,21 @@ export class LoginComponent {
 
   login(input: any): void {
     console.log(input);
-    this.service.loginCustomer(input).subscribe(
-      (response) => {
-        this.data = response;
-        console.log('very enao');
-        if (this.data.message) {
-          this.router.navigateByUrl('/customer');
-        }
+    this.service.loginCustomer(input).subscribe({
+      complete: () => {}, // completeHandler
+      error: (error) => {
+        console.log('error', error.status);
       },
-      (error) => {
-        this.router.navigateByUrl('/login');
-      }
-    );
+      next: (response) => {
+        this.data = response;
+        localStorage.setItem('user_id', this.data.data.user._id);
+        localStorage.setItem('token', this.data.data.token);
+        localStorage.setItem(
+          'fullname',
+          this.data.data.user.firstname + ' ' + this.data.data.user.lastname
+        );
+        this.router.navigateByUrl('/customer');
+      },
+    });
   }
-  // goListRepair(): void {
-  //   this.router.navigateByUrl('/listRepair');
-  // }
-  // goStatRepair(): void {
-  //   this.router.navigateByUrl('/statRepair');
-  // }
 }
