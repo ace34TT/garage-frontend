@@ -10,7 +10,11 @@
           </div>
         </div>
         <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-          <form #carData="ngForm" (ngSubmit)="depositCar(carData.value)">
+          <form
+            action="#"
+            #carData="ngForm"
+            (ngSubmit)="depositCar(carData.value)"
+          >
             <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
               Car information
             </h6>
@@ -27,6 +31,7 @@
                     type="text"
                     class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     name="registrationNumber"
+                    ngModel
                   />
                 </div>
               </div>
@@ -44,6 +49,7 @@
                     class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     value="jesse@example.com"
                     name="brand"
+                    ngModel
                   />
                 </div>
               </div>
@@ -59,6 +65,7 @@
                     type="email"
                     class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     name="model"
+                    ngModel
                   />
                 </div>
               </div>
@@ -200,10 +207,10 @@
         <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
           <div class="flex gap-4">
             <div class="lg:w-6/12 md:w-12/12">
-              <app-table-pending-car-depot></app-table-pending-car-depot>
+              <!-- <app-table-pending-car-depot></app-table-pending-car-depot> -->
             </div>
             <div class="lg:w-6/12 md:w-12/12">
-              <app-table-confirmed-car-depot></app-table-confirmed-car-depot>
+              <!-- <app-table-confirmed-car-depot></app-table-confirmed-car-depot> -->
             </div>
           </div>
         </div>
