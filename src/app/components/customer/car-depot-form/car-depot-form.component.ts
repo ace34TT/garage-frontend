@@ -9,10 +9,34 @@ import { Component } from '@angular/core';
 })
 export class CarDepotFormComponent {
   private data: any;
+  public carFormData: {
+    registration_number: string;
+    brand: string;
+    model: string;
+  } = { registration_number: 'RTX4080', brand: 'BMW', model: 'XZF' };
   constructor(private service: CustomerService) {}
-  depositCar(carData: ICarData) {
-    console.log(carData);
-
-    this.service.depositCar(carData);
+  depositCar(carData: any) {
+    const data = {
+      _id: localStorage.getItem('user_id'),
+      repairs: {
+        is_confirmed: false,
+        total_amount: 0,
+        car: {
+          registration_number: carData.registration_number,
+          brand: carData.brand,
+          model: carData.model,
+        },
+        to_do: [],
+      },
+    };
+    this.service.depositCar(data).subscribe({
+      next: (data) => {
+        console.log(data);
+      },
+      error: (error) => {
+        console.log(error);
+      },
+      complete: () => {},
+    });
   }
 }

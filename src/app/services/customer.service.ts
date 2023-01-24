@@ -9,7 +9,7 @@ import { baseUrl } from './url';
 export class CustomerService {
   finalBaseUrl: string;
   constructor(private httpClient: HttpClient) {
-    this.finalBaseUrl = baseUrl + 'customers/';
+    this.finalBaseUrl = baseUrl + 'customers';
   }
   loginCustomer(credentials: any) {
     return this.httpClient.post(this.finalBaseUrl + '/login', {
@@ -25,7 +25,11 @@ export class CustomerService {
   /*
    * cars
    */
-  depositCar(carData: ICarData) {
-    return this.httpClient.post(this.finalBaseUrl + '/', carData);
+  depositCar(carData: any) {
+    const customer_id = localStorage.getItem('user_id');
+    return this.httpClient.post(
+      this.finalBaseUrl + '/car-depot/' + customer_id,
+      carData
+    );
   }
 }
