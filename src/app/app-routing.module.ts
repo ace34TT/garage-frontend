@@ -7,6 +7,7 @@ import { ListRepairComponent } from './components/list-repair/list-repair.compon
 import { SignupComponent } from './layouts/signup/signup.component';
 import { HomepageComponent } from './layouts/homepage/homepage.component';
 import { CarDepotFormComponent } from './components/customer/car-depot-form/car-depot-form.component';
+import { TestDragComponent } from './components/test1-drag/test-drag.component';
 const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'login', component: LoginComponent },
@@ -14,7 +15,10 @@ const routes: Routes = [
   {
     path: 'customer',
     component: CustomerComponent,
-    children: [{ path: 'car-depot-form', component: CarDepotFormComponent }],
+    children: [
+      { path: 'car-depot-form', component: CarDepotFormComponent },
+      { path: 'drag', component: TestDragComponent },
+    ],
   },
   { path: 'listRepair', component: ListRepairComponent },
   { path: 'statRepair', component: StatRepairComponent },

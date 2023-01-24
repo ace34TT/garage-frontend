@@ -21,6 +21,8 @@ import { FooterAdminComponent } from './components/footer/footer-admin/footer-ad
 import { CarDepotFormComponent } from './components/customer/car-depot-form/car-depot-form.component';
 import { TablePendingCarDepotComponent } from './components/table/table-pending-car-depot/table-pending-car-depot.component';
 import { TableConfirmedCarDepotComponent } from './components/table/table-confirmed-car-depot/table-confirmed-car-depot.component';
+import { TestDragComponent } from './components/test1-drag/test-drag.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,9 +41,16 @@ import { TableConfirmedCarDepotComponent } from './components/table/table-confir
     CarDepotFormComponent,
     TablePendingCarDepotComponent,
     TableConfirmedCarDepotComponent,
+    TestDragComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    DragDropModule,
+  ],
 })
 export class AppModule {}
