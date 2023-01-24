@@ -1,3 +1,4 @@
+import { ManagerLoginComponent } from './views/login/manager-login/manager-login.component';
 import { CustomerSignupComponent } from './views/signup/customer-signup/customer-signup.component';
 import { CustomerLoginComponent } from './views/login/customer-login/customer-login.component';
 import { CustomerComponent } from './layouts/customer/customer.component';
@@ -29,8 +30,7 @@ const routes: Routes = [
   /*
    *Manager
    */
-
-  { path: 'manager/login', component: HomepageComponent },
+  { path: 'manager/login', component: ManagerLoginComponent },
 ];
 
 @NgModule({

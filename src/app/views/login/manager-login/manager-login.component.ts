@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { ManagerService } from './../../../services/manager/manager.service';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { CustomerService } from 'src/app/services/customer.service';
 
 @Component({
   selector: 'app-manager-login',
@@ -8,13 +8,14 @@ import { CustomerService } from 'src/app/services/customer.service';
   styleUrls: ['./manager-login.component.scss'],
 })
 export class ManagerLoginComponent {
+  @Input() username = 'Australia';
   data: any;
-  constructor(private service: CustomerService, private router: Router) {}
+  constructor(private service: ManagerService, private router: Router) {}
   ngOnInit() {}
   login(input: any): void {
     console.log(input);
-    this.service.loginCustomer(input).subscribe({
-      complete: () => {}, // completeHandler
+    this.service.login(input).subscribe({
+      complete: () => {},
       error: (error) => {
         console.log('error', error.status);
       },
@@ -26,7 +27,7 @@ export class ManagerLoginComponent {
           'fullname',
           this.data.data.user.firstname + ' ' + this.data.data.user.lastname
         );
-        this.router.navigateByUrl('/customer');
+        this.router.navigateByUrl('/workshop-manager');
       },
     });
   }

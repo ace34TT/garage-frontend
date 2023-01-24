@@ -1,5 +1,4 @@
-import { ICarData } from './../../../interface/customer.schema';
-import { CustomerService } from './../../../services/customer.service';
+import { CustomerService } from 'src/app/services/customer/customer.service';
 import { Component } from '@angular/core';
 
 @Component({

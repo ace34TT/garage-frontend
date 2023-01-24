@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { CustomerService } from 'src/app/services/customer.service';
-
+import { CustomerService } from 'src/app/services/customer/customer.service';
 @Component({
   selector: 'app-customer-login',
   templateUrl: './customer-login.component.html',

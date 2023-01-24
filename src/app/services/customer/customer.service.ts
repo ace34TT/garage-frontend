@@ -1,7 +1,6 @@
-import { ICarData } from './../interface/customer.schema';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { baseUrl } from './url';
+import { baseUrl } from './../url';
 
 @Injectable({
   providedIn: 'root',
