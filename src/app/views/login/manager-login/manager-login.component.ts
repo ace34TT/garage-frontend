@@ -1,17 +1,16 @@
-import { CustomerService } from '../../services/customer.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CustomerService } from 'src/app/services/customer.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  selector: 'app-manager-login',
+  templateUrl: './manager-login.component.html',
+  styleUrls: ['./manager-login.component.scss'],
 })
-export class LoginComponent {
+export class ManagerLoginComponent {
   data: any;
   constructor(private service: CustomerService, private router: Router) {}
   ngOnInit() {}
-
   login(input: any): void {
     console.log(input);
     this.service.loginCustomer(input).subscribe({

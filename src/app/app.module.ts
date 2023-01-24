@@ -5,13 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainWindowComponent } from './components/main-window/main-window.component';
-import { HomepageComponent } from './layouts/homepage/homepage.component';
-import { LoginComponent } from './layouts/login/login.component';
+import { HomepageComponent } from './views/homepage/homepage.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { StatRepairComponent } from './components/stat-repair/stat-repair.component';
 import { ListRepairComponent } from './components/list-repair/list-repair.component';
-import { SignupComponent } from './layouts/signup/signup.component';
 import { CustomerSidebarComponent } from './components/sidebar/customer-sidebar/customer-sidebar.component';
 import { AdminNavbarComponent } from './components/navbar/admin-navbar/admin-navbar.component';
 
@@ -23,13 +21,14 @@ import { TablePendingCarDepotComponent } from './components/table/table-pending-
 import { TableConfirmedCarDepotComponent } from './components/table/table-confirmed-car-depot/table-confirmed-car-depot.component';
 import { TestDragComponent } from './components/test1-drag/test-drag.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { CustomerLoginComponent } from './views/login/customer-login/customer-login.component';
+import { CustomerSignupComponent } from './views/signup/customer-signup/customer-signup.component';
+import { ManagerLoginComponent } from './views/login/manager-login/manager-login.component';
 @NgModule({
   declarations: [
     AppComponent,
     MainWindowComponent,
     HomepageComponent,
-    LoginComponent,
-    SignupComponent,
     CustomerComponent,
     CustomerSidebarComponent,
     StatRepairComponent,
@@ -42,6 +41,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     TablePendingCarDepotComponent,
     TableConfirmedCarDepotComponent,
     TestDragComponent,
+    CustomerLoginComponent,
+    CustomerSignupComponent,
+    ManagerLoginComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

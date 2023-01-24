@@ -1,27 +1,36 @@
+import { CustomerSignupComponent } from './views/signup/customer-signup/customer-signup.component';
+import { CustomerLoginComponent } from './views/login/customer-login/customer-login.component';
 import { CustomerComponent } from './layouts/customer/customer.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './layouts/login/login.component';
 import { StatRepairComponent } from './components/stat-repair/stat-repair.component';
 import { ListRepairComponent } from './components/list-repair/list-repair.component';
-import { SignupComponent } from './layouts/signup/signup.component';
-import { HomepageComponent } from './layouts/homepage/homepage.component';
+import { HomepageComponent } from './views/homepage/homepage.component';
 import { CarDepotFormComponent } from './components/customer/car-depot-form/car-depot-form.component';
 import { TestDragComponent } from './components/test1-drag/test-drag.component';
 const routes: Routes = [
+  /*
+   *Home page
+   */
   { path: '', component: HomepageComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'signUp', component: SignupComponent },
+  /*
+   *customer
+   */
+  { path: 'customer/login', component: CustomerLoginComponent },
+  { path: 'customer/signup', component: CustomerSignupComponent },
   {
     path: 'customer',
     component: CustomerComponent,
     children: [
       { path: 'car-depot-form', component: CarDepotFormComponent },
-      { path: 'drag', component: TestDragComponent },
+      // { path: 'drag', component: TestDragComponent },
     ],
   },
-  { path: 'listRepair', component: ListRepairComponent },
-  { path: 'statRepair', component: StatRepairComponent },
+  /*
+   *Manager
+   */
+
+  { path: 'manager/login', component: HomepageComponent },
 ];
 
 @NgModule({
