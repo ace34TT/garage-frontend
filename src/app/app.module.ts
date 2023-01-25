@@ -24,6 +24,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CustomerLoginComponent } from './views/login/customer-login/customer-login.component';
 import { CustomerSignupComponent } from './views/signup/customer-signup/customer-signup.component';
 import { ManagerLoginComponent } from './views/login/manager-login/manager-login.component';
+import { WorkshopManagerComponent } from './workshop-manager/workshop-manager.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { ManagerLoginComponent } from './views/login/manager-login/manager-login
     CustomerLoginComponent,
     CustomerSignupComponent,
     ManagerLoginComponent,
+    WorkshopManagerComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

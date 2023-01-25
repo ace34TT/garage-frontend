@@ -9,6 +9,7 @@ import { ListRepairComponent } from './components/list-repair/list-repair.compon
 import { HomepageComponent } from './views/homepage/homepage.component';
 import { CarDepotFormComponent } from './components/customer/car-depot-form/car-depot-form.component';
 import { TestDragComponent } from './components/test1-drag/test-drag.component';
+import { WorkshopManagerComponent } from './layouts/workshop-manager/workshop-manager.component';
 const routes: Routes = [
   /*
    *Home page
@@ -31,6 +32,7 @@ const routes: Routes = [
    *Manager
    */
   { path: 'manager/login', component: ManagerLoginComponent },
+  { path: 'workshop-manager', component: WorkshopManagerComponent },
 ];
 
 @NgModule({

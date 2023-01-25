@@ -27,7 +27,7 @@ export class ManagerLoginComponent {
           'fullname',
           this.data.data.user.firstname + ' ' + this.data.data.user.lastname
         );
-        this.router.navigateByUrl('/workshop-manager');
+        this.router.navigateByUrl('workshop-manager');
       },
     });
   }
