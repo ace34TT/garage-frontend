@@ -24,7 +24,10 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CustomerLoginComponent } from './views/login/customer-login/customer-login.component';
 import { CustomerSignupComponent } from './views/signup/customer-signup/customer-signup.component';
 import { ManagerLoginComponent } from './views/login/manager-login/manager-login.component';
-import { WorkshopManagerComponent } from './workshop-manager/workshop-manager.component';
+import { WorkshopManagerComponent } from './layouts/workshop-manager/workshop-manager.component';
+import { WorkshopManagerSidebarComponent } from './components/sidebar/workshop-manager-sidebar/workshop-manager-sidebar.component';
+import { CarNotConfirmedComponent } from './components/workshop-manager/car-not-confirmed/car-not-confirmed.component';
+import { InsertToDoComponent } from './components/workshop-manager/insert-to-do/insert-to-do.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +49,9 @@ import { WorkshopManagerComponent } from './workshop-manager/workshop-manager.co
     CustomerSignupComponent,
     ManagerLoginComponent,
     WorkshopManagerComponent,
+    WorkshopManagerSidebarComponent,
+    CarNotConfirmedComponent,
+    InsertToDoComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
