@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListRepairComponent } from './list-repair.component';
+import { RepairComponent } from './repair.component';
 
-describe('ListRepairComponent', () => {
-  let component: ListRepairComponent;
-  let fixture: ComponentFixture<ListRepairComponent>;
+describe('RepairComponent', () => {
+  let component: RepairComponent;
+  let fixture: ComponentFixture<RepairComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListRepairComponent ]
+      declarations: [ RepairComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ListRepairComponent);
+    fixture = TestBed.createComponent(RepairComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

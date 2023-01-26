@@ -5,13 +5,13 @@ import { CustomerComponent } from './layouts/customer/customer.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StatRepairComponent } from './components/stat-repair/stat-repair.component';
-import { ListRepairComponent } from './components/list-repair/list-repair.component';
 import { HomepageComponent } from './views/homepage/homepage.component';
 import { CarDepotFormComponent } from './components/customer/car-depot-form/car-depot-form.component';
 import { TestDragComponent } from './components/test1-drag/test-drag.component';
 import { WorkshopManagerComponent } from './layouts/workshop-manager/workshop-manager.component';
 import { CarNotConfirmedComponent } from './components/workshop-manager/car-not-confirmed/car-not-confirmed.component';
 import { InsertToDoComponent } from './components/workshop-manager/insert-to-do/insert-to-do.component';
+import { RepairsUnconfirmedComponent } from './components/workshop-manager/repairs-unconfirmed/repairs-unconfirmed.component';
 const routes: Routes = [
   /*
    *Home page
@@ -40,6 +40,7 @@ const routes: Routes = [
     children: [
       { path: 'car-not-confirmed', component: CarNotConfirmedComponent },
       { path: 'insert-to-do', component: InsertToDoComponent },
+      { path: 'repairs-unconfirmed', component: RepairsUnconfirmedComponent },
     ],
   },
 ];
