@@ -19,20 +19,22 @@
               <ul class="responsive-table">
                 <li class="table-header">
                   <div class="col col-2">Number plate</div>
-                  <div class="col col-2">Customer Name</div>
-                  <div class="col col-3">Amount Due</div>
-                  <div class="col col-4">Payment Status</div>
+                  <div class="col col-2">Model</div>
+                  <div class="col col-3">First Name</div>
+                  <div class="col col-4">Last Name</div>
                 </li>
                 <li *ngFor="let repair of repairs" class="table-row">
                   <div class="col col-2" data-label="Job Id">
-                    {{ repair.repairs }}
+                    {{ repair.registration_number }}
                   </div>
                   <div class="col col-2" data-label="Customer Name">
-                    John Doe
+                    {{ repair.model }}
                   </div>
-                  <div class="col col-3" data-label="Amount">$350</div>
+                  <div class="col col-3" data-label="Amount">
+                    {{ repair.firstname }}
+                  </div>
                   <div class="col col-4" data-label="Payment Status">
-                    Pending
+                    {{ repair.lastname }}
                   </div>
                 </li>
               </ul>

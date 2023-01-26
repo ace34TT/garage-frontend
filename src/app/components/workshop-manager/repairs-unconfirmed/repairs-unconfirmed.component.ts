@@ -8,15 +8,12 @@ import { WorkshopManagerService } from 'src/app/services/workshop-manager/worksh
 })
 export class RepairsUnconfirmedComponent {
   repairs!: any;
-
   constructor(private workshopManagerService: WorkshopManagerService) {}
-
   ngOnInit() {
     this.workshopManagerService.repairsUnconfirmed().subscribe((res) => {
       this.repairs = this.refactoUnconfirmedRepairs(res);
     });
   }
-
   refactoUnconfirmedRepairs(repairs: any) {
     let refacto = [];
     for (const tabRefacto of repairs) {
