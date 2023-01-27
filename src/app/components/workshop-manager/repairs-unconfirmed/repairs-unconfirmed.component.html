@@ -23,9 +23,18 @@
                   <div class="col col-3">First Name</div>
                   <div class="col col-4">Last Name</div>
                 </li>
+
                 <li *ngFor="let repair of repairs" class="table-row">
                   <div class="col col-2" data-label="Job Id">
-                    {{ repair.registration_number }}
+                    <a
+                      [routerLink]="[
+                        '/workshop-manager/insert-to-do/',
+                        repair._id,
+                        repair.repairId
+                      ]"
+                      routerLinkActive="true"
+                      >{{ repair.registration_number }}</a
+                    >
                   </div>
                   <div class="col col-2" data-label="Customer Name">
                     {{ repair.model }}

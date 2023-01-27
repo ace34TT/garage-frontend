@@ -10,7 +10,11 @@
           </div>
         </div>
         <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-          <form action="#" #carData="ngForm">
+          <form
+            action="#"
+            #carData="ngForm"
+            (ngSubmit)="insertCarData(carData.value, customerId, repairId)"
+          >
             <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
               Car to do
             </h6>
@@ -28,6 +32,7 @@
                     class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     name="label"
                     [defaultValue]=""
+                    required
                     ngModel
                   />
                 </div>
@@ -41,10 +46,11 @@
                     Price
                   </label>
                   <input
-                    type="text"
+                    type="number"
                     class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     name="price"
                     [defaultValue]=""
+                    required
                     ngModel
                   />
                 </div>
@@ -58,10 +64,11 @@
                     Start date
                   </label>
                   <input
-                    type="datetime"
+                    type="date"
                     class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     [defaultValue]=""
                     name="started_at"
+                    required
                     ngModel
                   />
                 </div>
@@ -75,10 +82,10 @@
                     End Date
                   </label>
                   <input
-                    type="datetime"
+                    type="date"
                     class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     name="done_at"
-                    [defaultValue]=""
+                    required
                     ngModel
                   />
                 </div>

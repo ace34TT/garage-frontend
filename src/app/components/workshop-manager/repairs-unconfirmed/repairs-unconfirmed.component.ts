@@ -12,6 +12,7 @@ export class RepairsUnconfirmedComponent {
   ngOnInit() {
     this.workshopManagerService.repairsUnconfirmed().subscribe((res) => {
       this.repairs = this.refactoUnconfirmedRepairs(res);
+      console.log(this.repairs);
     });
   }
   refactoUnconfirmedRepairs(repairs: any) {
@@ -20,6 +21,7 @@ export class RepairsUnconfirmedComponent {
       for (const element of tabRefacto.repairs) {
         refacto.push({
           _id: tabRefacto._id,
+          repairId: element._id,
           firstname: tabRefacto.firstname,
           lastname: tabRefacto.lastname,
           registration_number: element.car.registration_number,

@@ -39,7 +39,10 @@ const routes: Routes = [
     component: WorkshopManagerComponent,
     children: [
       { path: 'car-not-confirmed', component: CarNotConfirmedComponent },
-      { path: 'insert-to-do', component: InsertToDoComponent },
+      {
+        path: 'insert-to-do/:customerId/:repairId',
+        component: InsertToDoComponent,
+      },
       { path: 'repairs-unconfirmed', component: RepairsUnconfirmedComponent },
     ],
   },

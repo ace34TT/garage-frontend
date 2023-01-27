@@ -16,4 +16,12 @@ export class WorkshopManagerService {
   repairsUnconfirmed() {
     return this.httpClient.get(baseUrl + 'repairs/unconfirmed');
   }
+  insertTodo(todo: any) {
+    console.log('service');
+    console.log(todo);
+    return this.httpClient.post(
+      baseUrl + 'localhost:3000/api/repairs/confirm/6',
+      { todo }
+    );
+  }
 }
