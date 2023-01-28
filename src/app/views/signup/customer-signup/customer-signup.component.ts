@@ -24,12 +24,12 @@ export class CustomerSignupComponent {
     try {
       this.httpClient
         .post(baseUrl + 'customers', {
-          firstName: data.firstName,
-          lastname: data.lastName,
+          firstname: data.firstname,
+          lastname: data.lastname,
           email: data.email,
           credentials: {
             password: data.password,
-            roles: 'cmtr',
+            roles: ['ctmr'],
           },
         })
         .subscribe((data) => {
