@@ -11,36 +11,23 @@ export class RepairsUnconfirmedComponent {
   constructor(private workshopManagerService: WorkshopManagerService) {}
   ngOnInit() {
     this.workshopManagerService.repairsUnconfirmed().subscribe((res) => {
-      console.log(res);
       this.repairs = this.refactoUnconfirmedRepairs(res);
       console.log(this.repairs);
     });
   }
   refactoUnconfirmedRepairs(repairs: any) {
-    let refacto = [{}];
-    console.log('unconfirmed');
-    console.log(repairs);
-    // for (const tabRefacto of repairs) {
-    //   for (const element of tabRefacto.repairs) {
-    //     refacto.push({
-    //       _id: tabRefacto._id,
-    //       repairId: element._id,
-    //       firstname: tabRefacto.firstname,
-    //       lastname: tabRefacto.lastname,
-    //       registration_number: element.car.registration_number,
-    //       model: element.car.model,
-    //     });
-    //   }
-    // }
+    let refacto = [];
     for (const tabRefacto of repairs) {
-      refacto.push({
-        _id: tabRefacto._id,
-        repairId: tabRefacto._id,
-        firstname: tabRefacto.firstname,
-        lastname: tabRefacto.lastname,
-        registration_number: tabRefacto._id,
-        model: tabRefacto._id,
-      });
+      for (const element of tabRefacto.repairs) {
+        refacto.push({
+          _id: tabRefacto._id,
+          repairId: element._id,
+          firstname: tabRefacto.firstname,
+          lastname: tabRefacto.lastname,
+          registration_number: element.car.registration_number,
+          model: element.car.model,
+        });
+      }
     }
     return refacto;
   }

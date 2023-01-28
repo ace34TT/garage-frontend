@@ -17,6 +17,11 @@ export class CustomerService {
       password: credentials.password,
     });
   }
+  signUpSvc(customer: any) {
+    console.log('signUp customer');
+    return this.httpClient.post(this.finalBaseUrl + '', {});
+  }
+
   getAllCustomer() {
     return this.httpClient.get(this.finalBaseUrl + '');
   }
