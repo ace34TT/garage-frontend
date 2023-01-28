@@ -101,10 +101,9 @@
             Dashboard
           </a>
         </li>
-
         <li class="items-center">
           <a
-            [routerLink]="['/admin/settings']"
+            [routerLink]="['/workshop-manager/repairs-unconfirmed']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
             #adminSettings="routerLinkActive"
@@ -120,10 +119,30 @@
                 adminSettings.isActive ? 'opacity-75' : 'text-blueGray-300'
               "
             ></i>
-            Settings
+            Repairs
           </a>
         </li>
-
+        <li class="items-center">
+          <a
+            [routerLink]="['/workshop-manager/unpaid-payment']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminSettings="routerLinkActive"
+            [ngClass]="
+              adminSettings.isActive
+                ? 'text-red-600 hover:text-red-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-tools mr-2 text-sm"
+              [ngClass]="
+                adminSettings.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Payment
+          </a>
+        </li>
         <li class="items-center">
           <a
             [routerLink]="['/admin/tables']"

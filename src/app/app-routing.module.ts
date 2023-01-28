@@ -12,6 +12,7 @@ import { WorkshopManagerComponent } from './layouts/workshop-manager/workshop-ma
 import { CarNotConfirmedComponent } from './components/workshop-manager/car-not-confirmed/car-not-confirmed.component';
 import { InsertToDoComponent } from './components/workshop-manager/insert-to-do/insert-to-do.component';
 import { RepairsUnconfirmedComponent } from './components/workshop-manager/repairs-unconfirmed/repairs-unconfirmed.component';
+import { UnpaidPaymentComponent } from './components/workshop-manager/unpaid-payment/unpaid-payment.component';
 const routes: Routes = [
   /*
    *Home page
@@ -38,12 +39,13 @@ const routes: Routes = [
     path: 'workshop-manager',
     component: WorkshopManagerComponent,
     children: [
+      { path: 'repairs-unconfirmed', component: RepairsUnconfirmedComponent },
       { path: 'car-not-confirmed', component: CarNotConfirmedComponent },
+      { path: 'unpaid-payment', component: UnpaidPaymentComponent },
       {
         path: 'insert-to-do/:customerId/:repairId',
         component: InsertToDoComponent,
       },
-      { path: 'repairs-unconfirmed', component: RepairsUnconfirmedComponent },
     ],
   },
 ];
