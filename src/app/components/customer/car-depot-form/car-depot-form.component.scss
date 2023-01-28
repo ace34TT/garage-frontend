@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700');
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700");
 
 $base-spacing-unit: 24px;
-$half-spacing-unit: $base-spacing-unit / 2;
+$half-spacing-unit: calc($base-spacing-unit / 2);
 
-$color-alpha: #1772FF;
-$color-form-highlight: #EEEEEE;
+$color-alpha: #1772ff;
+$color-form-highlight: #eeeeee;
 
 *,
 *:before,
@@ -14,7 +14,7 @@ $color-form-highlight: #EEEEEE;
 
 body {
   padding: $base-spacing-unit;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   margin: 0;
 }
 
@@ -78,7 +78,7 @@ h6 {
   padding-right: $base-spacing-unit;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     right: -($half-spacing-unit * 1.5);
     color: white;
@@ -88,11 +88,10 @@ h6 {
   }
 
   &.desc::after {
-    content: '(desc)';
+    content: "(desc)";
   }
 
   &.asc::after {
-    content: '(asc)';
+    content: "(asc)";
   }
-
 }
