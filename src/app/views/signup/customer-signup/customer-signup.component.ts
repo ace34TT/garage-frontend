@@ -23,7 +23,7 @@ export class CustomerSignupComponent {
   signUp(data: any): void {
     try {
       this.httpClient
-        .post(baseUrl + '/customers', {
+        .post(baseUrl + 'customers', {
           firstName: data.firstName,
           lastname: data.lastName,
           email: data.email,
