@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { baseUrl } from './../url';
+import { baseUrl, repairsUrls } from './../url';
 
 @Injectable({
   providedIn: 'root',
@@ -17,9 +17,15 @@ export class CustomerService {
       password: credentials.password,
     });
   }
-  signUpSvc(customer: any) {
-    console.log('signUp customer');
-    return this.httpClient.post(this.finalBaseUrl + '', {});
+  signup(customer: any) {
+    customer.credentials = {
+      password: customer.password,
+      roles: ['ctmr'],
+    };
+    delete customer.password;
+    console.log(customer);
+
+    return this.httpClient.post(this.finalBaseUrl + '', customer);
   }
 
   getAllCustomer() {
@@ -31,9 +37,6 @@ export class CustomerService {
    */
   depositCar(carData: any) {
     const customer_id = localStorage.getItem('user_id');
-    return this.httpClient.post(
-      this.finalBaseUrl + '/car-depot/' + customer_id,
-      carData
-    );
+    return this.httpClient.post(repairsUrls.insert + customer_id, carData);
   }
 }

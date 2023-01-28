@@ -12,7 +12,7 @@ export class CustomerLoginComponent {
   ngOnInit() {}
 
   login(input: any): void {
-    console.log(input);
+    // console.log(input);
     this.service.loginCustomer(input).subscribe({
       complete: () => {}, // completeHandler
       error: (error) => {

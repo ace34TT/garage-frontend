@@ -21,20 +21,17 @@ export class CustomerSignupComponent {
   ) {}
   ngOnInit() {}
   signUp(data: any): void {
+    // console.log(data);
     try {
-      this.httpClient
-        .post(baseUrl + 'customers', {
-          firstname: data.firstname,
-          lastname: data.lastname,
-          email: data.email,
-          credentials: {
-            password: data.password,
-            roles: ['ctmr'],
-          },
-        })
-        .subscribe((data) => {
-          console.log(data);
-        });
+      this.service.signup(data).subscribe({
+        complete: () => {},
+        error: (error) => {
+          console.log('error', error.status);
+        },
+        next: (response) => {
+          // this.router.navigateByUrl('/customer');
+        },
+      });
     } catch (error) {
       console.log(error);
     }
