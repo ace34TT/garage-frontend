@@ -27,6 +27,7 @@ export class InsertToDoComponent {
       repairId: myRepairId,
       toDo: [
         {
+          status: false,
           label: data.label,
           price: data.price,
           started_at: data.started_at,
@@ -34,6 +35,7 @@ export class InsertToDoComponent {
         },
       ],
     };
+
     console.log('anelanelany');
     console.log(insert);
     this.workshopManagerService.insertTodo(insert);
