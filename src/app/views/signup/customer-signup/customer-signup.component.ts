@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class CustomerSignupComponent {
   constructor(private router: Router) {}
   signUp(data: any): void {
-    console.log('signUp ');
+    console.log('signUp');
     console.log(data);
     // this.router.navigateByUrl('/login');
   }

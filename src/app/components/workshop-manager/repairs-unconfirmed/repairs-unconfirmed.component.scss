@@ -50,16 +50,15 @@ h2 {
       display: none;
     }
 
-    .table-row {}
+    .table-row {
+    }
 
     li {
       display: block;
     }
 
     .col {
-
       flex-basis: 100%;
-
     }
 
     .col {
@@ -67,7 +66,7 @@ h2 {
       padding: 10px 0;
 
       &:before {
-        color: #6C7A89;
+        color: #6c7a89;
         padding-right: 10px;
         content: attr(data-label);
         flex-basis: 50%;

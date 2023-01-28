@@ -26,7 +26,6 @@ import { WorkshopManagerSidebarComponent } from './components/sidebar/workshop-m
 import { CarNotConfirmedComponent } from './components/workshop-manager/car-not-confirmed/car-not-confirmed.component';
 import { InsertToDoComponent } from './components/workshop-manager/insert-to-do/insert-to-do.component';
 import { RepairsUnconfirmedComponent } from './components/workshop-manager/repairs-unconfirmed/repairs-unconfirmed.component';
-import { RepairComponent } from './repair/repair.component';
 import { UnpaidPaymentComponent } from './components/workshop-manager/unpaid-payment/unpaid-payment.component';
 
 @NgModule({
@@ -53,7 +52,6 @@ import { UnpaidPaymentComponent } from './components/workshop-manager/unpaid-pay
     CarNotConfirmedComponent,
     InsertToDoComponent,
     RepairsUnconfirmedComponent,
-    RepairComponent,
     UnpaidPaymentComponent,
   ],
   providers: [],
