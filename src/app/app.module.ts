@@ -27,6 +27,7 @@ import { InsertToDoComponent } from './components/workshop-manager/insert-to-do/
 import { UnconfirmedRepairsComponent } from './components/workshop-manager/unconfirmed-repairs/unconfirmed-repairs.component';
 import { UnpaidRepairsComponent } from './components/customer/unpaid-repairs/unpaid-repairs.component';
 import { FinancialManagerComponent } from './layouts/financial-manager/financial-manager.component';
+import { FinancialManagerSidebarComponent } from './components/sidebar/financial-manager-sidebar/financial-manager-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { FinancialManagerComponent } from './layouts/financial-manager/financial
     UnconfirmedRepairsComponent,
     UnpaidRepairsComponent,
     FinancialManagerComponent,
+    FinancialManagerSidebarComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
