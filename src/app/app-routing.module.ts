@@ -1,3 +1,4 @@
+import { RepairsOnProcessComponent } from './components/workshop-manager/repairs-on-process/repairs-on-process.component';
 import { UnpaidRepairsComponent } from './components/customer/unpaid-repairs/unpaid-repairs.component';
 import { UnconfirmedRepairsComponent } from './components/workshop-manager/unconfirmed-repairs/unconfirmed-repairs.component';
 import { ManagerLoginComponent } from './views/login/manager-login/manager-login.component';
@@ -38,6 +39,7 @@ const routes: Routes = [
     component: WorkshopManagerComponent,
     children: [
       { path: 'unconfirmed-repairs', component: UnconfirmedRepairsComponent },
+      { path: 'repairs-on-process', component: RepairsOnProcessComponent },
       {
         path: 'repair/confirmation-form/:customerId/:repairId',
         component: InsertToDoComponent,

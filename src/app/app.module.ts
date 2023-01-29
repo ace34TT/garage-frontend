@@ -28,6 +28,7 @@ import { UnconfirmedRepairsComponent } from './components/workshop-manager/uncon
 import { UnpaidRepairsComponent } from './components/customer/unpaid-repairs/unpaid-repairs.component';
 import { FinancialManagerComponent } from './layouts/financial-manager/financial-manager.component';
 import { FinancialManagerSidebarComponent } from './components/sidebar/financial-manager-sidebar/financial-manager-sidebar.component';
+import { RepairsOnProcessComponent } from './components/workshop-manager/repairs-on-process/repairs-on-process.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { FinancialManagerSidebarComponent } from './components/sidebar/financial
     UnpaidRepairsComponent,
     FinancialManagerComponent,
     FinancialManagerSidebarComponent,
+    RepairsOnProcessComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

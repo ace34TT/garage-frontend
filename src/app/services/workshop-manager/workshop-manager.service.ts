@@ -16,4 +16,10 @@ export class WorkshopManagerService {
   confirmRepair(todo: any) {
     return this.httpClient.post(repairsUrls.confirm + todo.repairsId, todo);
   }
+  getAllToDoOnProcess() {
+    return this.httpClient.get(repairsUrls.confirm);
+  }
+  getUndoneToDoOnProcess() {
+    return this.httpClient.get(repairsUrls.undoneTodo);
+  }
 }

@@ -1,0 +1,57 @@
+<div class="flex flex-wrap">
+  <div class="w-full px-4">
+    <div>
+      <div
+        class="relative flex flex-col min-w-0 break-words bg-slate-100 w-full mb-6 shadow-md rounded"
+      >
+        <div class="rounded-t bg-white mb-0 px-6 py-6">
+          <div class="text-center flex justify-between">
+            <h6 class="text-blueGray-700 text-xl font-bold">Pending to-dos</h6>
+          </div>
+        </div>
+        <div class="flex-auto px-4 lg:px-10 py-10 pt-0"></div>
+        <hr />
+        <div class="relative overflow-x-auto">
+          <table
+            class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+          >
+            <thead
+              class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+            >
+              <tr>
+                <th scope="col" class="px-6 py-3">Customer</th>
+                <th scope="col" class="px-6 py-3">Brand</th>
+                <th scope="col" class="px-6 py-3">Model</th>
+                <th scope="col" class="px-6 py-3">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngFor="let repair of undone">
+                <ng-container *ngFor="let repairs of repair.repairs">
+                  <tr
+                    *ngFor="let todo of repairs.to_do"
+                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                  >
+                    <th
+                      scope="row"
+                      class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    >
+                      {{ todo.label }}
+                    </th>
+                    <td class="px-6 py-4">{{ todo.price }}</td>
+                    <td class="px-6 py-4">
+                      {{ todo.started_at | date : "yyyy-MM-dd" }}
+                    </td>
+                    <td class="px-6 py-4">
+                      {{ todo.done_at | date : "yyyy-MM-dd" }}
+                    </td>
+                  </tr>
+                </ng-container>
+              </ng-container>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
