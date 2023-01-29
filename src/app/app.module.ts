@@ -28,6 +28,8 @@ import { UnconfirmedRepairsComponent } from './components/workshop-manager/uncon
 import { UnpaidRepairsComponent } from './components/customer/unpaid-repairs/unpaid-repairs.component';
 import { FinancialManagerComponent } from './layouts/financial-manager/financial-manager.component';
 import { FinancialManagerSidebarComponent } from './components/sidebar/financial-manager-sidebar/financial-manager-sidebar.component';
+import { RepairsAdvancementComponent } from './components/customer/repairs-advancement/repairs-advancement.component';
+import { ProgressBarModule } from 'angular-progress-bar';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,7 @@ import { FinancialManagerSidebarComponent } from './components/sidebar/financial
     UnpaidRepairsComponent,
     FinancialManagerComponent,
     FinancialManagerSidebarComponent,
+    RepairsAdvancementComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -64,6 +67,7 @@ import { FinancialManagerSidebarComponent } from './components/sidebar/financial
     HttpClientModule,
     FormsModule,
     DragDropModule,
+    ProgressBarModule,
   ],
 })
 export class AppModule {}
