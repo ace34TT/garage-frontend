@@ -8,8 +8,14 @@ import { CustomerService } from 'src/app/services/customer/customer.service';
 })
 export class CustomerLoginComponent {
   data: any;
+  myEmail: any;
+  myPassword: any;
+
   constructor(private service: CustomerService, private router: Router) {}
-  ngOnInit() {}
+  ngOnInit() {
+    this.myEmail = 'tafinasoa35@gmail.com';
+    this.myPassword = 'lorem';
+  }
   login(input: any): void {
     // console.log(input);
     this.service.loginCustomer(input).subscribe({
