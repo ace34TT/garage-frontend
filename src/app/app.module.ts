@@ -51,7 +51,6 @@ import { FinancialManagerSidebarComponent } from './components/sidebar/financial
     WorkshopManagerComponent,
     WorkshopManagerSidebarComponent,
     InsertToDoComponent,
-
     UnconfirmedRepairsComponent,
     UnpaidRepairsComponent,
     FinancialManagerComponent,
