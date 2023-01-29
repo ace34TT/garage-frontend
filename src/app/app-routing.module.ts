@@ -1,17 +1,14 @@
+import { UnconfirmedRepairsComponent } from './components/workshop-manager/unconfirmed-repairs/unconfirmed-repairs.component';
 import { ManagerLoginComponent } from './views/login/manager-login/manager-login.component';
 import { CustomerSignupComponent } from './views/signup/customer-signup/customer-signup.component';
 import { CustomerLoginComponent } from './views/login/customer-login/customer-login.component';
 import { CustomerComponent } from './layouts/customer/customer.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { StatRepairComponent } from './components/stat-repair/stat-repair.component';
 import { HomepageComponent } from './views/homepage/homepage.component';
 import { CarDepotFormComponent } from './components/customer/car-depot-form/car-depot-form.component';
-import { TestDragComponent } from './components/test1-drag/test-drag.component';
 import { WorkshopManagerComponent } from './layouts/workshop-manager/workshop-manager.component';
-import { CarNotConfirmedComponent } from './components/workshop-manager/car-not-confirmed/car-not-confirmed.component';
 import { InsertToDoComponent } from './components/workshop-manager/insert-to-do/insert-to-do.component';
-import { RepairsUnconfirmedComponent } from './components/workshop-manager/repairs-unconfirmed/repairs-unconfirmed.component';
 import { UnpaidPaymentComponent } from './components/workshop-manager/unpaid-payment/unpaid-payment.component';
 const routes: Routes = [
   /*
@@ -39,11 +36,10 @@ const routes: Routes = [
     path: 'workshop-manager',
     component: WorkshopManagerComponent,
     children: [
-      { path: 'repairs-unconfirmed', component: RepairsUnconfirmedComponent },
-      { path: 'car-not-confirmed', component: CarNotConfirmedComponent },
+      { path: 'unconfirmed-repairs', component: UnconfirmedRepairsComponent },
       { path: 'unpaid-payment', component: UnpaidPaymentComponent },
       {
-        path: 'insert-to-do/:customerId/:repairId',
+        path: 'repair/confirmation-form/:customerId/:repairId',
         component: InsertToDoComponent,
       },
     ],

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { WorkshopManagerService } from 'src/app/services/workshop-manager/workshop-manager.service';
 @Component({
   selector: 'app-insert-to-do',
@@ -11,7 +11,8 @@ export class InsertToDoComponent {
   repairId!: any;
   constructor(
     private activatedRoute: ActivatedRoute,
-    private workshopManagerService: WorkshopManagerService
+    private service: WorkshopManagerService,
+    private router: Router
   ) {}
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe((data) => {
@@ -20,8 +21,6 @@ export class InsertToDoComponent {
     });
   }
   insertCarData(data: any, myCustomerId: any, myRepairId: any) {
-    console.log('vao miditra');
-    console.log(data);
     let insert = {
       customerId: myCustomerId,
       repairId: myRepairId,
@@ -35,9 +34,14 @@ export class InsertToDoComponent {
         },
       ],
     };
-
-    console.log('anelanelany');
-    console.log(insert);
-    this.workshopManagerService.insertTodo(insert);
+    this.service.confirmRepair(insert).subscribe({
+      complete: () => {},
+      error: (error: { status: any }) => {
+        console.log('error', error.status);
+      },
+      next: (response: any) => {
+        this.router.navigateByUrl('/workshop-manager/unconfirmed-repairs');
+      },
+    });
   }
 }

@@ -23,10 +23,9 @@ import { CustomerSignupComponent } from './views/signup/customer-signup/customer
 import { ManagerLoginComponent } from './views/login/manager-login/manager-login.component';
 import { WorkshopManagerComponent } from './layouts/workshop-manager/workshop-manager.component';
 import { WorkshopManagerSidebarComponent } from './components/sidebar/workshop-manager-sidebar/workshop-manager-sidebar.component';
-import { CarNotConfirmedComponent } from './components/workshop-manager/car-not-confirmed/car-not-confirmed.component';
 import { InsertToDoComponent } from './components/workshop-manager/insert-to-do/insert-to-do.component';
-import { RepairsUnconfirmedComponent } from './components/workshop-manager/repairs-unconfirmed/repairs-unconfirmed.component';
 import { UnpaidPaymentComponent } from './components/workshop-manager/unpaid-payment/unpaid-payment.component';
+import { UnconfirmedRepairsComponent } from './components/workshop-manager/unconfirmed-repairs/unconfirmed-repairs.component';
 
 @NgModule({
   declarations: [
@@ -49,10 +48,9 @@ import { UnpaidPaymentComponent } from './components/workshop-manager/unpaid-pay
     ManagerLoginComponent,
     WorkshopManagerComponent,
     WorkshopManagerSidebarComponent,
-    CarNotConfirmedComponent,
     InsertToDoComponent,
-    RepairsUnconfirmedComponent,
     UnpaidPaymentComponent,
+    UnconfirmedRepairsComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

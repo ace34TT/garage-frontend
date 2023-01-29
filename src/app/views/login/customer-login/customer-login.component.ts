@@ -14,7 +14,7 @@ export class CustomerLoginComponent {
   login(input: any): void {
     // console.log(input);
     this.service.loginCustomer(input).subscribe({
-      complete: () => {}, // completeHandler
+      complete: () => {},
       error: (error) => {
         console.log('error', error.status);
       },
