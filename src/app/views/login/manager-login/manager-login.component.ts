@@ -27,7 +27,13 @@ export class ManagerLoginComponent {
           'fullname',
           this.data.data.user.firstname + ' ' + this.data.data.user.lastname
         );
-        this.router.navigateByUrl('workshop-manager');
+
+        if (input.logAs == 'ra') {
+          this.router.navigateByUrl('workshop-manager');
+        }
+        if (input.logAs == 'rf') {
+          this.router.navigateByUrl('financial-manager');
+        }
       },
     });
   }

@@ -10,6 +10,7 @@ import { HomepageComponent } from './views/homepage/homepage.component';
 import { CarDepotFormComponent } from './components/customer/car-depot-form/car-depot-form.component';
 import { WorkshopManagerComponent } from './layouts/workshop-manager/workshop-manager.component';
 import { InsertToDoComponent } from './components/workshop-manager/insert-to-do/insert-to-do.component';
+import { FinancialManagerComponent } from './layouts/financial-manager/financial-manager.component';
 const routes: Routes = [
   /*
    *Home page
@@ -43,6 +44,7 @@ const routes: Routes = [
       },
     ],
   },
+  { path: 'financial-manager', component: FinancialManagerComponent },
 ];
 
 @NgModule({
