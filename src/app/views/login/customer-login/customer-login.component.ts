@@ -10,7 +10,6 @@ export class CustomerLoginComponent {
   data: any;
   constructor(private service: CustomerService, private router: Router) {}
   ngOnInit() {}
-
   login(input: any): void {
     // console.log(input);
     this.service.loginCustomer(input).subscribe({

@@ -24,8 +24,8 @@ import { ManagerLoginComponent } from './views/login/manager-login/manager-login
 import { WorkshopManagerComponent } from './layouts/workshop-manager/workshop-manager.component';
 import { WorkshopManagerSidebarComponent } from './components/sidebar/workshop-manager-sidebar/workshop-manager-sidebar.component';
 import { InsertToDoComponent } from './components/workshop-manager/insert-to-do/insert-to-do.component';
-import { UnpaidPaymentComponent } from './components/workshop-manager/unpaid-payment/unpaid-payment.component';
 import { UnconfirmedRepairsComponent } from './components/workshop-manager/unconfirmed-repairs/unconfirmed-repairs.component';
+import { UnpaidRepairsComponent } from './components/customer/unpaid-repairs/unpaid-repairs.component';
 
 @NgModule({
   declarations: [
@@ -49,8 +49,9 @@ import { UnconfirmedRepairsComponent } from './components/workshop-manager/uncon
     WorkshopManagerComponent,
     WorkshopManagerSidebarComponent,
     InsertToDoComponent,
-    UnpaidPaymentComponent,
+
     UnconfirmedRepairsComponent,
+     UnpaidRepairsComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

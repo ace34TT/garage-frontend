@@ -23,11 +23,10 @@ export class CustomerService {
       roles: ['ctmr'],
     };
     delete customer.password;
-    console.log(customer);
-
     return this.httpClient.post(this.finalBaseUrl + '', customer);
   }
 
+  //
   getAllCustomer() {
     return this.httpClient.get(this.finalBaseUrl + '');
   }
@@ -38,5 +37,9 @@ export class CustomerService {
   depositCar(carData: any) {
     const customer_id = localStorage.getItem('user_id');
     return this.httpClient.post(repairsUrls.insert + customer_id, carData);
+  }
+  getUnpaidRepairs() {
+    const customer_id = localStorage.getItem('user_id');
+    return this.httpClient.get(repairsUrls.unpaid + customer_id);
   }
 }

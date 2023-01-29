@@ -5,4 +5,5 @@ export const repairsUrls = {
   insert: baseUrl + repairsUrl + '/',
   unconfirmed: baseUrl + repairsUrl + '/unconfirmed/',
   confirm: baseUrl + repairsUrl + '/confirm/',
+  unpaid: baseUrl + repairsUrl + '/unpaid/',
 };

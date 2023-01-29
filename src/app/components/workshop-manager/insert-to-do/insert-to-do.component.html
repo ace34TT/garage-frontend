@@ -12,8 +12,8 @@
         <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
           <form
             action="#"
-            #carData="ngForm"
-            (ngSubmit)="insertCarData(carData.value, customerId, repairId)"
+            #toDoData="ngForm"
+            (ngSubmit)="pushItem(toDoData.value)"
           >
             <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
               Car to do
@@ -100,16 +100,48 @@
           </form>
         </div>
         <hr />
-        <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-          <div class="flex gap-4">
-            <div class="lg:w-6/12 md:w-12/12">
-              <!-- <app-table-pending-car-depot></app-table-pending-car-depot> -->
-            </div>
-            <div class="lg:w-6/12 md:w-12/12">
-              <!-- <app-table-confirmed-car-depot></app-table-confirmed-car-depot> -->
-            </div>
-          </div>
+        <div class="relative overflow-x-auto">
+          <table
+            class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+          >
+            <thead
+              class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+            >
+              <tr>
+                <th scope="col" class="px-6 py-3">Customer</th>
+                <th scope="col" class="px-6 py-3">Brand</th>
+                <th scope="col" class="px-6 py-3">Model</th>
+                <th scope="col" class="px-6 py-3">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="let toDo of pendingItems"
+                class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+              >
+                <th
+                  scope="row"
+                  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                >
+                  {{ toDo.label }}
+                </th>
+                <td class="px-6 py-4">{{ toDo.price }}</td>
+                <td class="px-6 py-4">
+                  {{ toDo.started_at | date : "yyyy-MM-dd" }}
+                </td>
+                <td class="px-6 py-4">
+                  {{ toDo.done_at | date : "yyyy-MM-dd" }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+        <button
+          class="bg-blue-400 text-white active:bg-blue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+          (click)="submitConfirmation()"
+        >
+          Add
+        </button>
       </div>
     </div>
   </div>

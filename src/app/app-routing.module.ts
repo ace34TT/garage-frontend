@@ -1,3 +1,4 @@
+import { UnpaidRepairsComponent } from './components/customer/unpaid-repairs/unpaid-repairs.component';
 import { UnconfirmedRepairsComponent } from './components/workshop-manager/unconfirmed-repairs/unconfirmed-repairs.component';
 import { ManagerLoginComponent } from './views/login/manager-login/manager-login.component';
 import { CustomerSignupComponent } from './views/signup/customer-signup/customer-signup.component';
@@ -9,7 +10,6 @@ import { HomepageComponent } from './views/homepage/homepage.component';
 import { CarDepotFormComponent } from './components/customer/car-depot-form/car-depot-form.component';
 import { WorkshopManagerComponent } from './layouts/workshop-manager/workshop-manager.component';
 import { InsertToDoComponent } from './components/workshop-manager/insert-to-do/insert-to-do.component';
-import { UnpaidPaymentComponent } from './components/workshop-manager/unpaid-payment/unpaid-payment.component';
 const routes: Routes = [
   /*
    *Home page
@@ -25,7 +25,7 @@ const routes: Routes = [
     component: CustomerComponent,
     children: [
       { path: 'car-depot-form', component: CarDepotFormComponent },
-      // { path: 'drag', component: TestDragComponent },
+      { path: 'unpaid-repairs', component: UnpaidRepairsComponent },
     ],
   },
   /*
@@ -37,7 +37,6 @@ const routes: Routes = [
     component: WorkshopManagerComponent,
     children: [
       { path: 'unconfirmed-repairs', component: UnconfirmedRepairsComponent },
-      { path: 'unpaid-payment', component: UnpaidPaymentComponent },
       {
         path: 'repair/confirmation-form/:customerId/:repairId',
         component: InsertToDoComponent,
