@@ -2,6 +2,8 @@ import { CustomerComponent } from './layouts/customer/customer.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { NgMaterialModule } from './ng-material/ng-material.module';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainWindowComponent } from './components/main-window/main-window.component';
@@ -29,6 +31,8 @@ import { UnpaidRepairsComponent } from './components/customer/unpaid-repairs/unp
 import { FinancialManagerComponent } from './layouts/financial-manager/financial-manager.component';
 import { FinancialManagerSidebarComponent } from './components/sidebar/financial-manager-sidebar/financial-manager-sidebar.component';
 import { RepairsOnProcessComponent } from './components/workshop-manager/repairs-on-process/repairs-on-process.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UndoneTodoModalComponent } from './components/ng-material/modal/undone-todo-modal/undone-todo-modal.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +61,7 @@ import { RepairsOnProcessComponent } from './components/workshop-manager/repairs
     FinancialManagerComponent,
     FinancialManagerSidebarComponent,
     RepairsOnProcessComponent,
+    UndoneTodoModalComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -66,6 +71,8 @@ import { RepairsOnProcessComponent } from './components/workshop-manager/repairs
     HttpClientModule,
     FormsModule,
     DragDropModule,
+    BrowserAnimationsModule,
+    NgMaterialModule,
   ],
 })
 export class AppModule {}
