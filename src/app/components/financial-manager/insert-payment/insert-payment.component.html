@@ -15,7 +15,7 @@
           <form
             action="#"
             #toDoData="ngForm"
-            (ngSubmit)="pushItem(toDoData.value)"
+            (ngSubmit)="submitInsert(toDoData.value)"
           >
             <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
               Validation Payment
@@ -139,12 +139,6 @@
             </tbody>
           </table>
         </div>
-        <button
-          class="bg-blue-400 text-white active:bg-blue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
-          (click)="submitConfirmation()"
-        >
-          Add
-        </button>
       </div>
     </div>
   </div>
