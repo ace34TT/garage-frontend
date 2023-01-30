@@ -9,6 +9,7 @@ import { WorkshopManagerService } from 'src/app/services/workshop-manager/worksh
 })
 export class UnconfirmedRepairsComponent {
   repairs!: any;
+  loader: boolean = true;
   constructor(
     private workshopManagerService: WorkshopManagerService,
     private router: Router
@@ -21,6 +22,7 @@ export class UnconfirmedRepairsComponent {
       },
       next: (response) => {
         this.repairs = response;
+        this.loader = false;
       },
     });
   }
