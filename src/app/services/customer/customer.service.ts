@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { baseUrl, repairsUrls } from './../url';
 
 @Injectable({
@@ -7,8 +7,11 @@ import { baseUrl, repairsUrls } from './../url';
 })
 export class CustomerService {
   finalBaseUrl: string;
+  JWTHeader: string = '';
   constructor(private httpClient: HttpClient) {
     this.finalBaseUrl = baseUrl + 'customers';
+    if (localStorage.getItem('token'))
+      this.JWTHeader = localStorage.getItem('token')!;
   }
   loginCustomer(credentials: any) {
     return this.httpClient.post(this.finalBaseUrl + '/login', {
@@ -17,6 +20,7 @@ export class CustomerService {
       password: credentials.password,
     });
   }
+  configureHeader() {}
   signup(customer: any) {
     customer.credentials = {
       password: customer.password,
@@ -27,38 +31,53 @@ export class CustomerService {
   }
   //
   getAllCustomer() {
-    return this.httpClient.get(this.finalBaseUrl + '');
+    return this.httpClient.get(this.finalBaseUrl + '', {
+      headers: { auth: this.JWTHeader },
+    });
   }
   // * car
   depositCar(carData: any) {
     const customer_id = localStorage.getItem('user_id');
-    return this.httpClient.post(repairsUrls.insert + customer_id, carData);
+    return this.httpClient.post(repairsUrls.insert + customer_id, carData, {
+      headers: { auth: this.JWTHeader },
+    });
   }
   getUnpaidRepairs() {
     const customer_id = localStorage.getItem('user_id');
-    return this.httpClient.get(repairsUrls.unpaid + customer_id);
+    return this.httpClient.get(repairsUrls.unpaid + customer_id, {
+      headers: { auth: this.JWTHeader },
+    });
   }
 
   // *  bills
   getAllRepairs() {
     const customer_id = localStorage.getItem('user_id');
-    return this.httpClient.get(repairsUrls.allRepairs + customer_id);
-  }
+    console.log(this.JWTHeader);
 
+    return this.httpClient.get(repairsUrls.allRepairs + customer_id, {
+      headers: { auth: this.JWTHeader },
+    });
+  }
   // * bill details
   getBillsDetails(repairId: string) {
     const customer_id = localStorage.getItem('user_id');
     return this.httpClient.get(
-      repairsUrls.oneRepairByCustomer + customer_id + '/' + repairId
+      repairsUrls.oneRepairByCustomer + customer_id + '/' + repairId,
+      {
+        headers: { auth: this.JWTHeader },
+      }
     );
   }
-  // * repair
+  // * avancement
   getAvancement() {
     return this.httpClient.get(baseUrl + 'repairs/undone');
   }
   getDetailsAvancement(customerId: string, repairId: string) {
     return this.httpClient.get(
-      baseUrl + 'repairs/customer/' + customerId + '/' + repairId
+      baseUrl + 'repairs/customer/' + customerId + '/' + repairId,
+      {
+        headers: { auth: this.JWTHeader },
+      }
     );
   }
 }

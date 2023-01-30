@@ -8,15 +8,19 @@ import { Component } from '@angular/core';
 })
 export class UnpaidRepairsComponent {
   public unpaid: any[];
+  public loader: boolean = false;
 
   constructor(private service: CustomerService) {
     this.unpaid = [];
   }
   ngOnInit() {
+    this.loader = true;
+
     this.service.getUnpaidRepairs().subscribe({
       next: (response: any) => {
         this.unpaid = response.repairs;
         console.log(this.unpaid);
+        this.loader = false;
       },
       complete: () => {},
       error: (error) => {
