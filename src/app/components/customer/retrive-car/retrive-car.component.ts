@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CustomerService } from '../../../services/customer/customer.service';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-retrive-car',
   templateUrl: './retrive-car.component.html',
