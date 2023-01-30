@@ -30,7 +30,6 @@ import { UnpaidRepairsComponent } from './components/customer/unpaid-repairs/unp
 import { FinancialManagerComponent } from './layouts/financial-manager/financial-manager.component';
 import { FinancialManagerSidebarComponent } from './components/sidebar/financial-manager-sidebar/financial-manager-sidebar.component';
 import { RepairsAdvancementComponent } from './components/customer/repairs-advancement/repairs-advancement.component';
-import { ProgressBarModule } from 'angular-progress-bar';
 import { InsertPaymentComponent } from './components/financial-manager/insert-payment/insert-payment.component';
 import { RepairsUnpaidPaymentComponent } from './components/financial-manager/repairs-unpaid-payment/repairs-unpaid-payment.component';
 import { RepairsOnProcessComponent } from './components/workshop-manager/repairs-on-process/repairs-on-process.component';
@@ -79,7 +78,6 @@ import { SpinningLoaderComponent } from './components/loader/spinning-loader/spi
     HttpClientModule,
     FormsModule,
     DragDropModule,
-    ProgressBarModule,
   ],
 })
 export class AppModule {}
