@@ -1,0 +1,55 @@
+<div class="flex flex-wrap">
+  <div class="w-full px-4">
+    <div>
+      <div
+        class="relative flex flex-col min-w-0 break-words bg-slate-100 w-full mb-6 shadow-md rounded"
+      >
+        <div class="rounded-t bg-white mb-0 px-6 py-6">
+          <div class="text-center flex justify-between">
+            <h6 class="text-blueGray-700 text-xl font-bold">Retrievable car</h6>
+          </div>
+        </div>
+        <div class="relative overflow-x-auto">
+          <table
+            class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+          >
+            <thead
+              class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+            >
+              <tr>
+                <th scope="col" class="px-6 py-3">To do</th>
+                <th scope="col" class="px-6 py-3">Car</th>
+                <th scope="col" class="px-6 py-3">start Date</th>
+                <th scope="col" class="px-6 py-3">end Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!--
+              <ng-container
+                *ngFor="let todo of myData.repairs[0].to_do; let i = index"
+              >
+                <tr
+                  class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                  [ngClass]="todo.status ? 'bg-green-100' : 'bg-red-100'"
+                >
+                  <td class="px-6 py-4">
+                    {{ todo.label }}
+                  </td>
+                  <td class="px-6 py-4">
+                    {{ todo.price }}
+                  </td>
+                  <td class="px-6 py-4">
+                    {{ todo.started_at | date : "yyyy-MM-dd" }}
+                  </td>
+                  <td class="px-6 py-4">
+                    {{ todo.done_at | date : "yyyy-MM-dd" }}
+                  </td>
+                </tr>
+              </ng-container>
+            --></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

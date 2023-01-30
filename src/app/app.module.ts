@@ -36,6 +36,7 @@ import { RepairsOnProcessComponent } from './components/workshop-manager/repairs
 import { BillComponent } from './components/customer/bill/bill.component';
 import { SpinningLoaderComponent } from './components/loader/spinning-loader/spinning-loader.component';
 import { DetailsAdvancementComponent } from './components/customer/details-advancement/details-advancement.component';
+import { RetriveCarComponent } from './components/customer/retrive-car/retrive-car.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { DetailsAdvancementComponent } from './components/customer/details-advan
     BillComponent,
     SpinningLoaderComponent,
     DetailsAdvancementComponent,
+    RetriveCarComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

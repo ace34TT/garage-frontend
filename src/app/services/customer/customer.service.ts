@@ -42,6 +42,9 @@ export class CustomerService {
       headers: { auth: this.JWTHeader },
     });
   }
+  getRetrievableCar(customerId: string) {
+    return this.httpClient.get(baseUrl + 'repairs/retrievable/' + customerId);
+  }
   getUnpaidRepairs() {
     const customer_id = localStorage.getItem('user_id');
     return this.httpClient.get(repairsUrls.unpaid + customer_id, {
