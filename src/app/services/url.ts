@@ -1,4 +1,4 @@
-export const baseUrl = 'http://localhost:3000/api/';
+export const baseUrl = 'https://garage-y8mf.onrender.com/api/';
 
 const repairsUrl = 'repairs/';
 export const repairsUrls = {
