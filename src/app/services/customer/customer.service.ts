@@ -74,7 +74,10 @@ export class CustomerService {
   }
   getDetailsAvancement(customerId: string, repairId: string) {
     return this.httpClient.get(
-      baseUrl + 'repairs/customer/' + customerId + '/' + repairId
+      baseUrl + 'repairs/customer/' + customerId + '/' + repairId,
+      {
+        headers: { auth: this.JWTHeader },
+      }
     );
   }
 }
