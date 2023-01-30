@@ -59,9 +59,7 @@ export class CustomerService {
     });
   }
   getAvancement() {
-    return this.httpClient.get(baseUrl + 'repairs/undone', {
-      headers: { auth: this.JWTHeader },
-    });
+    return this.httpClient.get(baseUrl + 'repairs/undone');
   }
   // * bill details
   getBillsDetails(repairId: string) {
@@ -71,6 +69,15 @@ export class CustomerService {
       {
         headers: { auth: this.JWTHeader },
       }
+    );
+  }
+  // * repair
+  getAvancement() {
+    return this.httpClient.get(baseUrl + 'repairs/undone');
+  }
+  getDetailsAvancement(customerId: string, repairId: string) {
+    return this.httpClient.get(
+      baseUrl + 'repairs/customer/' + customerId + '/' + repairId
     );
   }
 }
