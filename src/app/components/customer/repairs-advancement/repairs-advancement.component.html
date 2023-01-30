@@ -41,7 +41,7 @@
                       <div
                         class="bg-blue-600 h-2.5 rounded-full"
                         style="width: {{
-                          (repair.undone * 100) / (repair.done + repair.undone)
+                          (100 / (repair.done + repair.undone)) * repair.undone
                         }}%"
                       ></div>
                     </div>
