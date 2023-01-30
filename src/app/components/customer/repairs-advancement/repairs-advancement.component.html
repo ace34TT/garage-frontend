@@ -7,7 +7,7 @@
         <div class="rounded-t bg-white mb-0 px-6 py-6">
           <div class="text-center flex justify-between">
             <h6 class="text-blueGray-700 text-xl font-bold">
-              Advancement repairsdsad
+              Advancement repairs
             </h6>
           </div>
         </div>
@@ -41,18 +41,27 @@
                       <div
                         class="bg-blue-600 h-2.5 rounded-full"
                         style="width: {{
-                          (100 / (repair.done + repair.undone)) * repair.undone
+                          (100 / (repair.data.done + repair.data.undone)) *
+                            repair.data.undone
                         }}%"
                       ></div>
                     </div>
-                    <!-- Progress bar -->
+                    <!-- Progress  bar -->
                   </th>
-                  <td class="px-6 py-4">{{ repair.car.model }}</td>
-                  <td class="px-6 py-4">
-                    {{ repair.car.registration_number }}
+
+                  <td
+                    (click)="goToDetails(repair.customerId, repair.data._id)"
+                    class="px-6 py-4"
+                  >
+                    <a routerLink="/customer/advancement-details">{{
+                      repair.data.car.model
+                    }}</a>
                   </td>
                   <td class="px-6 py-4">
-                    {{ repair.car.registration_number }}
+                    {{ repair.data.car.registration_number }}
+                  </td>
+                  <td class="px-6 py-4">
+                    {{ repair.data.car.registration_number }}
                   </td>
                 </tr>
               </ng-container>

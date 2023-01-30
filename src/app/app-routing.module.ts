@@ -17,6 +17,7 @@ import { FinancialManagerComponent } from './layouts/financial-manager/financial
 import { RepairsAdvancementComponent } from './components/customer/repairs-advancement/repairs-advancement.component';
 import { InsertPaymentComponent } from './components/financial-manager/insert-payment/insert-payment.component';
 import { RepairsUnpaidPaymentComponent } from './components/financial-manager/repairs-unpaid-payment/repairs-unpaid-payment.component';
+import { DetailsAdvancementComponent } from './components/customer/details-advancement/details-advancement.component';
 
 const routes: Routes = [
   /*
@@ -37,6 +38,10 @@ const routes: Routes = [
       { path: 'bills', component: BillComponent },
       { path: 'bills/:repair-id/details', component: BillDetailsComponent },
       { path: 'advancement-repairs', component: RepairsAdvancementComponent },
+      {
+        path: 'advancement-details/:customerId/:repairId',
+        component: DetailsAdvancementComponent,
+      },
     ],
   },
   /*

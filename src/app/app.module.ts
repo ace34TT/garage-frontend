@@ -35,6 +35,7 @@ import { RepairsUnpaidPaymentComponent } from './components/financial-manager/re
 import { RepairsOnProcessComponent } from './components/workshop-manager/repairs-on-process/repairs-on-process.component';
 import { BillComponent } from './components/customer/bill/bill.component';
 import { SpinningLoaderComponent } from './components/loader/spinning-loader/spinning-loader.component';
+import { DetailsAdvancementComponent } from './components/customer/details-advancement/details-advancement.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { SpinningLoaderComponent } from './components/loader/spinning-loader/spi
     BillDetailsComponent,
     BillComponent,
     SpinningLoaderComponent,
+    DetailsAdvancementComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -44,14 +44,21 @@ export class CustomerService {
     const customer_id = localStorage.getItem('user_id');
     return this.httpClient.get(repairsUrls.allRepairs + customer_id);
   }
-  getAvancement() {
-    return this.httpClient.get(baseUrl + 'repairs/undone');
-  }
+
   // * bill details
   getBillsDetails(repairId: string) {
     const customer_id = localStorage.getItem('user_id');
     return this.httpClient.get(
       repairsUrls.oneRepairByCustomer + customer_id + '/' + repairId
+    );
+  }
+  // * repair
+  getAvancement() {
+    return this.httpClient.get(baseUrl + 'repairs/undone');
+  }
+  getDetailsAvancement(customerId: string, repairId: string) {
+    return this.httpClient.get(
+      baseUrl + 'repairs/customer/' + customerId + '/' + repairId
     );
   }
 }
