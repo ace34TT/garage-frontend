@@ -1,0 +1,52 @@
+<div class="flex flex-wrap">
+  <div class="w-full px-4">
+    <div>
+      <div
+        class="relative flex flex-col min-w-0 break-words bg-slate-100 w-full mb-6 shadow-md rounded"
+      >
+        <div class="rounded-t bg-white mb-0 px-6 py-6">
+          <div class="text-center flex justify-between">
+            <h6 class="text-blueGray-700 text-xl font-bold">Repairs unpaid</h6>
+          </div>
+        </div>
+        <div class="relative overflow-x-auto">
+          <table
+            class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+          >
+            <thead
+              class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+            >
+              <tr>
+                <th scope="col" class="px-6 py-3">Customer</th>
+                <th scope="col" class="px-6 py-3">Brand</th>
+                <th scope="col" class="px-6 py-3">Model</th>
+                <th scope="col" class="px-6 py-3">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngFor="let repair of repairs; let i = index">
+                <tr
+                  *ngFor="let unitRepair of repair.repairs"
+                  (click)="repairsOnClick(repair._id, unitRepair._id)"
+                  class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                >
+                  <th
+                    scope="row"
+                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                  >
+                    {{ repair.firstname + " " + repair.lastname }}
+                  </th>
+                  <td class="px-6 py-4">{{ unitRepair.car.brand }}</td>
+                  <td class="px-6 py-4">{{ unitRepair.car.model }}</td>
+                  <td class="px-6 py-4">
+                    {{ unitRepair.createdAt | date : "yyyy-MM-dd" }}
+                  </td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

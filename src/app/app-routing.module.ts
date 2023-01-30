@@ -12,6 +12,10 @@ import { CarDepotFormComponent } from './components/customer/car-depot-form/car-
 import { WorkshopManagerComponent } from './layouts/workshop-manager/workshop-manager.component';
 import { InsertToDoComponent } from './components/workshop-manager/insert-to-do/insert-to-do.component';
 import { FinancialManagerComponent } from './layouts/financial-manager/financial-manager.component';
+import { RepairsAdvancementComponent } from './components/customer/repairs-advancement/repairs-advancement.component';
+import { InsertPaymentComponent } from './components/financial-manager/insert-payment/insert-payment.component';
+import { RepairsUnpaidPaymentComponent } from './components/financial-manager/repairs-unpaid-payment/repairs-unpaid-payment.component';
+
 const routes: Routes = [
   /*
    *Home page
@@ -28,6 +32,7 @@ const routes: Routes = [
     children: [
       { path: 'car-depot-form', component: CarDepotFormComponent },
       { path: 'unpaid-repairs', component: UnpaidRepairsComponent },
+      { path: 'advancement-repairs', component: RepairsAdvancementComponent },
     ],
   },
   /*
@@ -46,7 +51,14 @@ const routes: Routes = [
       },
     ],
   },
-  { path: 'financial-manager', component: FinancialManagerComponent },
+  {
+    path: 'financial-manager',
+    component: FinancialManagerComponent,
+    children: [
+      { path: 'repairs-unpaid', component: RepairsUnpaidPaymentComponent },
+      { path: 'insert-payment/:customerId', component: InsertPaymentComponent },
+    ],
+  },
 ];
 
 @NgModule({

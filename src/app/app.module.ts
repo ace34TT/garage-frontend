@@ -28,6 +28,10 @@ import { UnconfirmedRepairsComponent } from './components/workshop-manager/uncon
 import { UnpaidRepairsComponent } from './components/customer/unpaid-repairs/unpaid-repairs.component';
 import { FinancialManagerComponent } from './layouts/financial-manager/financial-manager.component';
 import { FinancialManagerSidebarComponent } from './components/sidebar/financial-manager-sidebar/financial-manager-sidebar.component';
+import { RepairsAdvancementComponent } from './components/customer/repairs-advancement/repairs-advancement.component';
+import { ProgressBarModule } from 'angular-progress-bar';
+import { InsertPaymentComponent } from './components/financial-manager/insert-payment/insert-payment.component';
+import { RepairsUnpaidPaymentComponent } from './components/financial-manager/repairs-unpaid-payment/repairs-unpaid-payment.component';
 import { RepairsOnProcessComponent } from './components/workshop-manager/repairs-on-process/repairs-on-process.component';
 
 @NgModule({
@@ -56,6 +60,9 @@ import { RepairsOnProcessComponent } from './components/workshop-manager/repairs
     UnpaidRepairsComponent,
     FinancialManagerComponent,
     FinancialManagerSidebarComponent,
+    RepairsAdvancementComponent,
+    InsertPaymentComponent,
+    RepairsUnpaidPaymentComponent,
     RepairsOnProcessComponent,
   ],
   providers: [],
@@ -66,6 +73,7 @@ import { RepairsOnProcessComponent } from './components/workshop-manager/repairs
     HttpClientModule,
     FormsModule,
     DragDropModule,
+    ProgressBarModule,
   ],
 })
 export class AppModule {}
