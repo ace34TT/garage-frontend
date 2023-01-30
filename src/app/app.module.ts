@@ -32,6 +32,7 @@ import { RepairsAdvancementComponent } from './components/customer/repairs-advan
 import { ProgressBarModule } from 'angular-progress-bar';
 import { InsertPaymentComponent } from './components/financial-manager/insert-payment/insert-payment.component';
 import { RepairsUnpaidPaymentComponent } from './components/financial-manager/repairs-unpaid-payment/repairs-unpaid-payment.component';
+import { RepairsOnProcessComponent } from './components/workshop-manager/repairs-on-process/repairs-on-process.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { RepairsUnpaidPaymentComponent } from './components/financial-manager/re
     RepairsAdvancementComponent,
     InsertPaymentComponent,
     RepairsUnpaidPaymentComponent,
+    RepairsOnProcessComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -6,4 +6,7 @@ export const repairsUrls = {
   unconfirmed: baseUrl + repairsUrl + '/unconfirmed/',
   confirm: baseUrl + repairsUrl + '/confirm/',
   unpaid: baseUrl + repairsUrl + '/unpaid/',
+  // * undone toto
+  undoneTodo: baseUrl + repairsUrl + 'todo/undone',
+  confirmTodo: baseUrl + repairsUrl + 'todo/',
 };
