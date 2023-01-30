@@ -58,9 +58,6 @@ export class CustomerService {
       headers: { auth: this.JWTHeader },
     });
   }
-  getAvancement() {
-    return this.httpClient.get(baseUrl + 'repairs/undone');
-  }
   // * bill details
   getBillsDetails(repairId: string) {
     const customer_id = localStorage.getItem('user_id');
@@ -71,7 +68,7 @@ export class CustomerService {
       }
     );
   }
-  // * repair
+  // * avancement
   getAvancement() {
     return this.httpClient.get(baseUrl + 'repairs/undone');
   }
