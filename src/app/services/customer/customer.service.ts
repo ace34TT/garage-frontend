@@ -70,7 +70,9 @@ export class CustomerService {
   }
   // * avancement
   getAvancement() {
-    return this.httpClient.get(baseUrl + 'repairs/undone');
+    return this.httpClient.get(baseUrl + 'repairs/undone', {
+      headers: { auth: this.JWTHeader },
+    });
   }
   getDetailsAvancement(customerId: string, repairId: string) {
     return this.httpClient.get(
