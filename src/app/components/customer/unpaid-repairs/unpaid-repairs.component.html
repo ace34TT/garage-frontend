@@ -6,7 +6,7 @@
       >
         <div class="rounded-t bg-white mb-0 px-6 py-6">
           <div class="text-center flex justify-between">
-            <h6 class="text-blueGray-700 text-xl font-bold">Car depot</h6>
+            <h6 class="text-blueGray-700 text-xl font-bold">UNPAID</h6>
           </div>
         </div>
         <div *ngIf="loader; else content" class="mt-5 text-center">
@@ -44,7 +44,10 @@
                       {{ repair.car.registration_number }}
                     </td>
                     <td class="px-6 py-4">
-                      <!-- {{ unitRepair.createdAt | date : "yyyy-MM-dd" }} -->
+                      {{ repair.total_paid }}
+                    </td>
+                    <td class="px-6 py-4">
+                      {{ repair.total_amount }}
                     </td>
                   </tr>
                 </ng-container>

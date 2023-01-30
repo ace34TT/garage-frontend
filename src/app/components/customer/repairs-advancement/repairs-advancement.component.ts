@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class RepairsAdvancementComponent {
   public unpaid: any[];
+  public loader: boolean = true;
 
   constructor(private service: CustomerService, private router: Router) {
     this.unpaid = [];
@@ -24,6 +25,7 @@ export class RepairsAdvancementComponent {
             });
           }
         }
+        this.loader = false;
       },
       complete: () => {},
       error: (error) => {

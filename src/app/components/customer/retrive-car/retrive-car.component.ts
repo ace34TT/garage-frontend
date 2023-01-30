@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CustomerService } from '../../../services/customer/customer.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-retrive-car',
@@ -8,11 +9,13 @@ import { CustomerService } from '../../../services/customer/customer.service';
 })
 export class RetriveCarComponent {
   car!: any[];
-  constructor(private service: CustomerService) {}
+  public loader: boolean = true;
+  constructor(private service: CustomerService, private router: Router) {}
   ngOnInit() {
     this.service.getRetrievableCar(localStorage.getItem('user_id')).subscribe({
       next: (response: any) => {
         this.car = response.data;
+        this.loader = false;
       },
       complete: () => {},
       error: (error) => {
@@ -25,7 +28,9 @@ export class RetriveCarComponent {
     this.service
       .recoverCar(localStorage.getItem('user_id'), repairId)
       .subscribe({
-        next: (response: any) => {},
+        next: (response: any) => {
+          this.router.navigateByUrl('/customer/retrieve-car');
+        },
         complete: () => {},
         error: (error) => {
           console.log(error);
