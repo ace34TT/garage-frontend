@@ -13,9 +13,6 @@ export class RetriveCarComponent {
     this.service.getRetrievableCar(localStorage.getItem('user_id')).subscribe({
       next: (response: any) => {
         this.car = response.data;
-        console.log('================================================');
-        console.log(this.car);
-        console.log('================================================');
       },
       complete: () => {},
       error: (error) => {

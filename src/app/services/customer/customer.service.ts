@@ -48,8 +48,6 @@ export class CustomerService {
   }
 
   recoverCar(customerIdA: any, repairIdA: any) {
-    console.log('service=================');
-    console.log(customerIdA, repairIdA);
     return this.httpClient.post(baseUrl + 'repairs/recuperation/6', {
       customerId: customerIdA,
       repairId: repairIdA,
