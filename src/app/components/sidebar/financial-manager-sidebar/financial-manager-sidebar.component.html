@@ -103,54 +103,12 @@
         </li>
         <li class="items-center">
           <a
-            [routerLink]="['']"
-            class="text-xs uppercase py-3 font-bold block"
-            routerLinkActive
-            #adminSettings="routerLinkActive"
-            [ngClass]="
-              adminSettings.isActive
-                ? 'text-red-600 hover:text-red-700'
-                : 'text-blueGray-700 hover:text-blueGray-500'
-            "
-          >
-            <i
-              class="fas fa-tools mr-2 text-sm"
-              [ngClass]="
-                adminSettings.isActive ? 'opacity-75' : 'text-blueGray-300'
-              "
-            ></i>
-            Repairs
-          </a>
-        </li>
-        <li class="items-center">
-          <a
-            [routerLink]="['/workshop-manager/unpaid-payment']"
-            class="text-xs uppercase py-3 font-bold block"
-            routerLinkActive
-            #adminSettings="routerLinkActive"
-            [ngClass]="
-              adminSettings.isActive
-                ? 'text-red-600 hover:text-red-700'
-                : 'text-blueGray-700 hover:text-blueGray-500'
-            "
-          >
-            <i
-              class="fas fa-tools mr-2 text-sm"
-              [ngClass]="
-                adminSettings.isActive ? 'opacity-75' : 'text-blueGray-300'
-              "
-            ></i>
-            Payment
-          </a>
-        </li>
-        <li class="items-center">
-          <a
             [routerLink]="['/financial-manager/repairs-unpaid']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
-            #adminSettings="routerLinkActive"
+            #paymentValidation="routerLinkActive"
             [ngClass]="
-              adminSettings.isActive
+              paymentValidation.isActive
                 ? 'text-red-600 hover:text-red-700'
                 : 'text-blueGray-700 hover:text-blueGray-500'
             "
@@ -158,7 +116,7 @@
             <i
               class="fas fa-tools mr-2 text-sm"
               [ngClass]="
-                adminSettings.isActive ? 'opacity-75' : 'text-blueGray-300'
+                paymentValidation.isActive ? 'opacity-75' : 'text-blueGray-300'
               "
             ></i>
             Validation Payment

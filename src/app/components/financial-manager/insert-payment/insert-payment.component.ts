@@ -39,7 +39,6 @@ export class InsertPaymentComponent {
       this.repairId = data.get('repairId');
     });
     this.getTab();
-    console.log(this.pendingItems);
   }
   getTab() {
     this.service.getPayment(this.myCustomer_id, this.repairId).subscribe({
@@ -48,9 +47,6 @@ export class InsertPaymentComponent {
         console.log('error', error.status);
       },
       next: (response: any) => {
-        console.log(this.pendingItems);
-        console.log('-=-==========================');
-        //console.log(response.repairs[0].payment);
         this.pendingItems = response.repairs[0].payment;
         console.log(this.pendingItems);
       },
