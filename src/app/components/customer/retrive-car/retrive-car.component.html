@@ -23,6 +23,7 @@
                 <th scope="col" class="px-6 py-3">Total Amount</th>
               </tr>
             </thead>
+
             <tbody>
               <ng-container
                 *ngFor="let repair of car[0].repairs; let i = index"
@@ -43,6 +44,14 @@
                   </td>
                   <td class="px-6 py-4">
                     {{ repair.total_amount }}
+                  </td>
+                  <td class="px-6 py-4">
+                    <button
+                      (click)="recover(repair._id)"
+                      class="bg-green-400 text-white active:bg-green-400 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+                    >
+                      recover
+                    </button>
                   </td>
                 </tr>
               </ng-container>

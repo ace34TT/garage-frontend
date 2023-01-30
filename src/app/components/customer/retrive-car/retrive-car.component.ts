@@ -8,18 +8,31 @@ import { CustomerService } from '../../../services/customer/customer.service';
 })
 export class RetriveCarComponent {
   car!: any[];
-  custumerId!: any;
   constructor(private service: CustomerService) {}
   ngOnInit() {
-    this.service.getRetrievableCar('63d6a14634d6f146f2496d3b').subscribe({
+    this.service.getRetrievableCar(localStorage.getItem('user_id')).subscribe({
       next: (response: any) => {
         this.car = response.data;
+        console.log('================================================');
         console.log(this.car);
+        console.log('================================================');
       },
       complete: () => {},
       error: (error) => {
         console.log(error);
       },
     });
+  }
+  recover(repairId: any) {
+    console.log('recovered');
+    this.service
+      .recoverCar(localStorage.getItem('user_id'), repairId)
+      .subscribe({
+        next: (response: any) => {},
+        complete: () => {},
+        error: (error) => {
+          console.log(error);
+        },
+      });
   }
 }

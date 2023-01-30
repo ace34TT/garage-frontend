@@ -36,14 +36,24 @@ export class CustomerService {
     });
   }
   // * car
+
   depositCar(carData: any) {
     const customer_id = localStorage.getItem('user_id');
     return this.httpClient.post(repairsUrls.insert + customer_id, carData, {
       headers: { auth: this.JWTHeader },
     });
   }
-  getRetrievableCar(customerId: string) {
+  getRetrievableCar(customerId: any) {
     return this.httpClient.get(baseUrl + 'repairs/retrievable/' + customerId);
+  }
+
+  recoverCar(customerIdA: any, repairIdA: any) {
+    console.log('service=================');
+    console.log(customerIdA, repairIdA);
+    return this.httpClient.post(baseUrl + 'repairs/recuperation/6', {
+      customerId: customerIdA,
+      repairId: repairIdA,
+    });
   }
   getUnpaidRepairs() {
     const customer_id = localStorage.getItem('user_id');
