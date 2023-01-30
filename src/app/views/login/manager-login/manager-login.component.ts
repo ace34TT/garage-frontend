@@ -10,8 +10,13 @@ import { Router } from '@angular/router';
 export class ManagerLoginComponent {
   @Input() username = 'Australia';
   data: any;
+  myUsername!: string;
+  myPassword!: string;
   constructor(private service: ManagerService, private router: Router) {}
-  ngOnInit() {}
+  ngOnInit() {
+    this.myUsername = 'ravaka';
+    this.myPassword = 'mdp';
+  }
   login(input: any): void {
     console.log(input);
     this.service.login(input).subscribe({
