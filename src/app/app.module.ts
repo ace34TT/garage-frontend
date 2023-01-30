@@ -1,3 +1,4 @@
+import { BillDetailsComponent } from './components/customer/bill-details/bill-details.component';
 import { CustomerComponent } from './layouts/customer/customer.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -29,6 +30,8 @@ import { UnpaidRepairsComponent } from './components/customer/unpaid-repairs/unp
 import { FinancialManagerComponent } from './layouts/financial-manager/financial-manager.component';
 import { FinancialManagerSidebarComponent } from './components/sidebar/financial-manager-sidebar/financial-manager-sidebar.component';
 import { RepairsOnProcessComponent } from './components/workshop-manager/repairs-on-process/repairs-on-process.component';
+import { BillComponent } from './components/customer/bill/bill.component';
+import { SpinningLoaderComponent } from './components/loader/spinning-loader/spinning-loader.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +60,9 @@ import { RepairsOnProcessComponent } from './components/workshop-manager/repairs
     FinancialManagerComponent,
     FinancialManagerSidebarComponent,
     RepairsOnProcessComponent,
+    BillDetailsComponent,
+    BillComponent,
+    SpinningLoaderComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

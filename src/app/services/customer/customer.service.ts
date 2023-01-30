@@ -25,15 +25,11 @@ export class CustomerService {
     delete customer.password;
     return this.httpClient.post(this.finalBaseUrl + '', customer);
   }
-
   //
   getAllCustomer() {
     return this.httpClient.get(this.finalBaseUrl + '');
   }
-
-  /*
-   * cars
-   */
+  // * car
   depositCar(carData: any) {
     const customer_id = localStorage.getItem('user_id');
     return this.httpClient.post(repairsUrls.insert + customer_id, carData);
@@ -41,5 +37,11 @@ export class CustomerService {
   getUnpaidRepairs() {
     const customer_id = localStorage.getItem('user_id');
     return this.httpClient.get(repairsUrls.unpaid + customer_id);
+  }
+
+  // *  bills
+  getAllRepairs() {
+    const customer_id = localStorage.getItem('user_id');
+    return this.httpClient.get(repairsUrls.allRepairs + customer_id);
   }
 }
