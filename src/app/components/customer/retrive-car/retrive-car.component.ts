@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CustomerService } from '../../../services/customer/customer.service';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-retrive-car',
   templateUrl: './retrive-car.component.html',
@@ -29,7 +28,9 @@ export class RetriveCarComponent {
       .recoverCar(localStorage.getItem('user_id'), repairId)
       .subscribe({
         next: (response: any) => {
-          this.router.navigateByUrl('/customer/retrieve-car');
+          this.loader = true;
+          this.ngOnInit();
+          console.log(response);
         },
         complete: () => {},
         error: (error) => {

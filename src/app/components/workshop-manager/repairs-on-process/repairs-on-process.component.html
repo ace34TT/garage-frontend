@@ -9,6 +9,9 @@
             <h6 class="text-blueGray-700 text-xl font-bold">Pending to-dos</h6>
           </div>
         </div>
+        <div *ngIf="loader" class="mt-5 text-center">
+          <app-spinning-loader></app-spinning-loader>
+        </div>
         <div class="flex-auto px-4 lg:px-10 py-10 pt-0"></div>
         <hr />
         <div class="relative overflow-x-auto">

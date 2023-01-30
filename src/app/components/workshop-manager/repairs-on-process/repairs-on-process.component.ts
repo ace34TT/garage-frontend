@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class RepairsOnProcessComponent {
   public undone: any[];
+  loader: boolean = true;
   constructor(private service: WorkshopManagerService) {
     this.undone = [];
   }
@@ -19,6 +20,7 @@ export class RepairsOnProcessComponent {
       },
       next: (response) => {
         this.undone = Object.values(response);
+        this.loader = false;
       },
     });
   }
