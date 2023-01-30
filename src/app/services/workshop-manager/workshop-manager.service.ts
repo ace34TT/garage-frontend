@@ -32,4 +32,7 @@ export class WorkshopManagerService {
       }
     );
   }
+  getRepairsUnpaid() {
+    return this.httpClient.get(baseUrl + 'repairs/unpaid');
+  }
 }
