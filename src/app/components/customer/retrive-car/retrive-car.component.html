@@ -17,36 +17,36 @@
               class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
             >
               <tr>
-                <th scope="col" class="px-6 py-3">To do</th>
-                <th scope="col" class="px-6 py-3">Car</th>
-                <th scope="col" class="px-6 py-3">start Date</th>
-                <th scope="col" class="px-6 py-3">end Date</th>
+                <th scope="col" class="px-6 py-3">brand</th>
+                <th scope="col" class="px-6 py-3">model</th>
+                <th scope="col" class="px-6 py-3">registration number</th>
+                <th scope="col" class="px-6 py-3">Total Amount</th>
               </tr>
             </thead>
             <tbody>
-              <!--
               <ng-container
-                *ngFor="let todo of myData.repairs[0].to_do; let i = index"
+                *ngFor="let repair of car[0].repairs; let i = index"
               >
                 <tr
                   class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
-                  [ngClass]="todo.status ? 'bg-green-100' : 'bg-red-100'"
                 >
                   <td class="px-6 py-4">
-                    {{ todo.label }}
+                    {{ repair.car.brand }}
+                  </td>
+
+                  <td class="px-6 py-4">
+                    {{ repair.car.model }}
+                  </td>
+
+                  <td class="px-6 py-4">
+                    {{ repair.car.registration_number }}
                   </td>
                   <td class="px-6 py-4">
-                    {{ todo.price }}
-                  </td>
-                  <td class="px-6 py-4">
-                    {{ todo.started_at | date : "yyyy-MM-dd" }}
-                  </td>
-                  <td class="px-6 py-4">
-                    {{ todo.done_at | date : "yyyy-MM-dd" }}
+                    {{ repair.total_amount }}
                   </td>
                 </tr>
               </ng-container>
-            --></tbody>
+            </tbody>
           </table>
         </div>
       </div>

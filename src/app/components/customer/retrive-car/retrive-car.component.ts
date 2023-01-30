@@ -13,8 +13,8 @@ export class RetriveCarComponent {
   ngOnInit() {
     this.service.getRetrievableCar('63d6a14634d6f146f2496d3b').subscribe({
       next: (response: any) => {
-        //   this.car = response;
-        console.log(response);
+        this.car = response.data;
+        console.log(this.car);
       },
       complete: () => {},
       error: (error) => {
