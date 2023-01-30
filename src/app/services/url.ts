@@ -11,4 +11,5 @@ export const repairsUrls = {
   confirmTodo: baseUrl + repairsUrl + 'todo/',
   // * all repairs
   allRepairs: baseUrl + repairsUrl + 'customer/',
+  oneRepairByCustomer: baseUrl + repairsUrl + 'customer/',
 };

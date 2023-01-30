@@ -47,4 +47,11 @@ export class CustomerService {
   getAvancement() {
     return this.httpClient.get(baseUrl + 'repairs/undone');
   }
+  // * bill details
+  getBillsDetails(repairId: string) {
+    const customer_id = localStorage.getItem('user_id');
+    return this.httpClient.get(
+      repairsUrls.oneRepairByCustomer + customer_id + '/' + repairId
+    );
+  }
 }
