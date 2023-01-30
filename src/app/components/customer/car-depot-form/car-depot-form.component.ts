@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./car-depot-form.component.scss'],
 })
 export class CarDepotFormComponent {
-  private data: any;
+  loader: boolean = false;
   public carFormData: {
     registration_number: string;
     brand: string;
@@ -15,6 +15,7 @@ export class CarDepotFormComponent {
   } = { registration_number: 'RTX4080', brand: 'BMW', model: 'XZF' };
   constructor(private service: CustomerService) {}
   depositCar(carData: any) {
+    this.loader = true;
     const data = {
       _id: localStorage.getItem('user_id'),
       repairs: {
@@ -30,12 +31,15 @@ export class CarDepotFormComponent {
     };
     this.service.depositCar(data).subscribe({
       next: (data) => {
-        console.log(data);
+        this.loader = false;
       },
       error: (error) => {
         console.log(error);
+        this.loader = false;
       },
-      complete: () => {},
+      complete: () => {
+        this.loader = false;
+      },
     });
   }
 }

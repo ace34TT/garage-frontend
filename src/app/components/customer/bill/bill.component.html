@@ -33,12 +33,15 @@
               <tbody>
                 <tr
                   *ngFor="let repair of allRepairs.repairs"
-                  class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                  class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-100 hover:cursor-pointer"
+                  (click)="billDetails(repair._id)"
                 >
                   <th
                     scope="row"
                     class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                  ></th>
+                  >
+                    --//--
+                  </th>
                   <td class="px-6 py-4">
                     {{
                       repair.car.brand +
@@ -48,8 +51,22 @@
                         repair.car.registration_number
                     }}
                   </td>
-                  <td class="px-6 py-4"></td>
-                  <td class="px-6 py-4"></td>
+                  <td class="px-6 py-4">{{ repair.total_amount }}</td>
+                  <td class="px-6 py-4">{{ repair.total_paid }}</td>
+                  <td class="px-6 py-4">
+                    <div
+                      *ngIf="
+                        repair.total_amount > repair.total_paid;
+                        else elseBlock
+                      "
+                      class="text-red-500"
+                    >
+                      incomplete
+                    </div>
+                    <ng-template #elseBlock>
+                      <div class="text-green-500">Complete</div>
+                    </ng-template>
+                  </td>
                 </tr>
               </tbody>
             </table>

@@ -1,1 +1,119 @@
-<p>bill-details works!</p>
+<div class="flex flex-wrap">
+  <div class="w-full px-4">
+    <div>
+      <div
+        class="relative flex flex-col min-w-0 break-words bg-slate-100 w-full mb-6 shadow-md rounded"
+      >
+        <div class="rounded-t bg-white mb-0 px-6 py-6">
+          <div class="text-center flex justify-between">
+            <h6 class="text-blueGray-700 text-xl font-bold">Bills</h6>
+          </div>
+        </div>
+        <div *ngIf="loader; else content" class="mt-5 text-center">
+          <app-spinning-loader></app-spinning-loader>
+        </div>
+        <ng-template #content>
+          <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+            <div class="p-10">
+              <div class="jus">
+                <b>Customer : </b>
+                {{ selectedRepair.firstname + " " + selectedRepair.lastname }}
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="flex gap-10 p-5">
+            <div class="w-6/12">
+              <h1 class="text-center">Reasons</h1>
+              <br />
+              <div class="relative overflow-x-auto">
+                <table
+                  class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+                >
+                  <thead
+                    class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+                  >
+                    <tr>
+                      <th scope="col" class="px-6 py-3">Label</th>
+                      <th scope="col" class="px-6 py-3">price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      *ngFor="let to_do of selectedRepair.repairs[0].to_do"
+                      class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-100 hover:cursor-pointer"
+                    >
+                      <th
+                        scope="row"
+                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                      >
+                        {{ to_do.label }}
+                      </th>
+                      <td class="px-6 py-4">{{ to_do.price }}</td>
+                    </tr>
+                    <tr
+                      class="bg-slate-300 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-100 hover:cursor-pointer"
+                    >
+                      <th
+                        scope="row"
+                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                      ></th>
+                      <td class="px-6 py-4">
+                        {{ selectedRepair.repairs[0].total_amount }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="w-6/12">
+              <h1 class="text-center">Payments</h1>
+              <br />
+              <div class="relative overflow-x-auto">
+                <table
+                  class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+                >
+                  <thead
+                    class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+                  >
+                    <tr>
+                      <th scope="col" class="px-6 py-3">Number</th>
+                      <th scope="col" class="px-6 py-3">Car details</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      *ngFor="let payment of selectedRepair.repairs[0].payment"
+                      class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-100 hover:cursor-pointer"
+                    >
+                      <th
+                        scope="row"
+                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                      >
+                        {{ payment.createdAt | date : "yyyy-MM-dd" }}
+                      </th>
+                      <td class="px-6 py-4">
+                        {{ payment.amount }}
+                      </td>
+                    </tr>
+                    <tr
+                      class="bg-slate-300 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-100 hover:cursor-pointer"
+                    >
+                      <th
+                        scope="row"
+                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                      ></th>
+                      <td class="px-6 py-4">
+                        {{ selectedRepair.repairs[0].total_paid }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

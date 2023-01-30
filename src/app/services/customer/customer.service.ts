@@ -44,4 +44,12 @@ export class CustomerService {
     const customer_id = localStorage.getItem('user_id');
     return this.httpClient.get(repairsUrls.allRepairs + customer_id);
   }
+
+  // * bill details
+  getBillsDetails(repairId: string) {
+    const customer_id = localStorage.getItem('user_id');
+    return this.httpClient.get(
+      repairsUrls.oneRepairByCustomer + customer_id + '/' + repairId
+    );
+  }
 }
