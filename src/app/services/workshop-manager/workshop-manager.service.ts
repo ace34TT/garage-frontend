@@ -22,4 +22,14 @@ export class WorkshopManagerService {
   getUndoneToDoOnProcess() {
     return this.httpClient.get(repairsUrls.undoneTodo);
   }
+  confirmToDo(customerId: any, repairId: any, toDoId: any) {
+    return this.httpClient.post(
+      repairsUrls.confirmTodo + toDoId + '/validation',
+      {
+        customerId,
+        repairId,
+        toDoId,
+      }
+    );
+  }
 }

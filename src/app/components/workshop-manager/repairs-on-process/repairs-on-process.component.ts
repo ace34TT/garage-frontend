@@ -22,4 +22,13 @@ export class RepairsOnProcessComponent {
       },
     });
   }
+  validateTodo(customerId: any, repairId: any, todoId: any) {
+    this.service.confirmToDo(customerId, repairId, todoId).subscribe({
+      complete: () => {},
+      error: (error) => {
+        console.log('error', error.status);
+      },
+      next: (response) => {},
+    });
+  }
 }

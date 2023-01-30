@@ -8,4 +8,5 @@ export const repairsUrls = {
   unpaid: baseUrl + repairsUrl + '/unpaid/',
   // * undone toto
   undoneTodo: baseUrl + repairsUrl + 'todo/undone',
+  confirmTodo: baseUrl + repairsUrl + 'todo/',
 };

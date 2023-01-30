@@ -19,10 +19,10 @@
               class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
             >
               <tr>
-                <th scope="col" class="px-6 py-3">Customer</th>
-                <th scope="col" class="px-6 py-3">Brand</th>
-                <th scope="col" class="px-6 py-3">Model</th>
-                <th scope="col" class="px-6 py-3">Date</th>
+                <th scope="col" class="px-6 py-3">label</th>
+                <th scope="col" class="px-6 py-3">Amount</th>
+                <th scope="col" class="px-6 py-3">started at</th>
+                <th scope="col" class="px-6 py-3">ended at</th>
               </tr>
             </thead>
             <tbody>
@@ -44,6 +44,16 @@
                     </td>
                     <td class="px-6 py-4">
                       {{ todo.done_at | date : "yyyy-MM-dd" }}
+                    </td>
+                    <td class="px-6 py-4">
+                      <button
+                        (click)="
+                          validateTodo(repair._id, repairs._id, todo._id)
+                        "
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                      >
+                        Button
+                      </button>
                     </td>
                   </tr>
                 </ng-container>
