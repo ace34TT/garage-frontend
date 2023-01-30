@@ -22,6 +22,14 @@ export class WorkshopManagerService {
   getUndoneToDoOnProcess() {
     return this.httpClient.get(repairsUrls.undoneTodo);
   }
+  insertPayment(payment: any) {
+    return this.httpClient.post(baseUrl + 'repairs/payment', payment);
+  }
+  getPayment(customerId: string, repairId: string) {
+    return this.httpClient.get(
+      baseUrl + 'repairs/customer/' + customerId + '/' + repairId
+    );
+  }
   confirmToDo(customerId: any, repairId: any, toDoId: any) {
     return this.httpClient.post(
       repairsUrls.confirmTodo + toDoId + '/validation',
@@ -31,5 +39,8 @@ export class WorkshopManagerService {
         toDoId,
       }
     );
+  }
+  getRepairsUnpaid() {
+    return this.httpClient.get(baseUrl + 'repairs/unpaid');
   }
 }

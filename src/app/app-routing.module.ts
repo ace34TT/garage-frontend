@@ -60,7 +60,10 @@ const routes: Routes = [
     component: FinancialManagerComponent,
     children: [
       { path: 'repairs-unpaid', component: RepairsUnpaidPaymentComponent },
-      { path: 'insert-payment/:customerId', component: InsertPaymentComponent },
+      {
+        path: 'insert-payment/:customerId/:repairId/:firstName/:lastName/:registration_number',
+        component: InsertPaymentComponent,
+      },
     ],
   },
 ];

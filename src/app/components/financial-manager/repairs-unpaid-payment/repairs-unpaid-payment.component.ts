@@ -14,7 +14,7 @@ export class RepairsUnpaidPaymentComponent {
     private router: Router
   ) {}
   ngOnInit() {
-    this.workshopManagerService.getUnconfirmedRepairs().subscribe({
+    this.workshopManagerService.getRepairsUnpaid().subscribe({
       complete: () => {},
       error: (error) => {
         console.log('error', error.status);
@@ -25,9 +25,24 @@ export class RepairsUnpaidPaymentComponent {
     });
   }
 
-  repairsOnClick(customerId: string, repairId: string) {
+  repairsOnClick(
+    customerId: string,
+    repairId: string,
+    firstName: string,
+    lastName: string,
+    registration_number: string
+  ) {
     this.router.navigateByUrl(
-      '/financial-manager/insert-payment/' + customerId
+      '/financial-manager/insert-payment/' +
+        customerId +
+        '/' +
+        repairId +
+        '/' +
+        firstName +
+        '/' +
+        lastName +
+        '/' +
+        registration_number
     );
   }
 }

@@ -16,4 +16,7 @@ export class ManagerService {
       password: credentials.password,
     });
   }
+  getRepairsUnpaid() {
+    return this.httpClient.get(baseUrl + 'repairs/unpaid');
+  }
 }

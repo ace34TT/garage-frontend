@@ -18,6 +18,7 @@
             >
               <tr>
                 <th scope="col" class="px-6 py-3">Customer</th>
+                <th scope="col" class="px-6 py-3">Registration number</th>
                 <th scope="col" class="px-6 py-3">Brand</th>
                 <th scope="col" class="px-6 py-3">Model</th>
                 <th scope="col" class="px-6 py-3">Date</th>
@@ -27,7 +28,15 @@
               <ng-container *ngFor="let repair of repairs; let i = index">
                 <tr
                   *ngFor="let unitRepair of repair.repairs"
-                  (click)="repairsOnClick(repair._id, unitRepair._id)"
+                  (click)="
+                    repairsOnClick(
+                      repair._id,
+                      unitRepair._id,
+                      repair.lastname,
+                      repair.firstname,
+                      unitRepair.car.registration_number
+                    )
+                  "
                   class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
                 >
                   <th
@@ -36,6 +45,9 @@
                   >
                     {{ repair.firstname + " " + repair.lastname }}
                   </th>
+                  <td class="px-6 py-4">
+                    {{ unitRepair.car.registration_number }}
+                  </td>
                   <td class="px-6 py-4">{{ unitRepair.car.brand }}</td>
                   <td class="px-6 py-4">{{ unitRepair.car.model }}</td>
                   <td class="px-6 py-4">
