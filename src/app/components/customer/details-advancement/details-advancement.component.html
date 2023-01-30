@@ -54,10 +54,10 @@
                     {{ todo.price }}
                   </td>
                   <td class="px-6 py-4">
-                    {{ todo.started_at }}
+                    {{ todo.started_at | date : "yyyy-MM-dd" }}
                   </td>
                   <td class="px-6 py-4">
-                    {{ todo.done_at }}
+                    {{ todo.done_at | date : "yyyy-MM-dd" }}
                   </td>
                 </tr>
               </ng-container>
