@@ -18,7 +18,7 @@ export class ManagerLoginComponent {
     this.myPassword = 'mdp';
   }
   login(input: any): void {
-    console.log(input);
+    localStorage.clear();
     this.service.login(input).subscribe({
       complete: () => {},
       error: (error) => {

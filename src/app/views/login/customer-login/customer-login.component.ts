@@ -18,6 +18,7 @@ export class CustomerLoginComponent {
   }
   login(input: any): void {
     // console.log(input);
+    localStorage.clear();
     this.service.loginCustomer(input).subscribe({
       complete: () => {},
       error: (error) => {

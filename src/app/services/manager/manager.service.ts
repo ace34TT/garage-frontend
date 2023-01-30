@@ -6,8 +6,12 @@ import { baseUrl } from './../url';
 })
 export class ManagerService {
   finalBaseUrl: string;
+  JWTHeader: string = '';
   constructor(private httpClient: HttpClient) {
     this.finalBaseUrl = baseUrl + 'users';
+    if (localStorage.getItem('token')) {
+      this.JWTHeader = localStorage.getItem('token')!;
+    }
   }
   login(credentials: any) {
     return this.httpClient.post(this.finalBaseUrl + '/login', {
@@ -17,6 +21,8 @@ export class ManagerService {
     });
   }
   getRepairsUnpaid() {
-    return this.httpClient.get(baseUrl + 'repairs/unpaid');
+    return this.httpClient.get(baseUrl + 'repairs/unpaid', {
+      headers: { auth: this.JWTHeader },
+    });
   }
 }
