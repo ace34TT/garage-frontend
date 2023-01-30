@@ -13,10 +13,11 @@ export class RepairsAdvancementComponent {
     this.unpaid = [];
   }
   ngOnInit() {
-    this.service.getUnpaidRepairs().subscribe({
+    this.service.getAvancement().subscribe({
       next: (response: any) => {
-        this.unpaid = response.repairs;
-        console.log(this.unpaid);
+        console.log(response[0].repairs);
+        this.unpaid = response[0].repairs;
+        // console.log(this.unpaid);
       },
       complete: () => {},
       error: (error) => {

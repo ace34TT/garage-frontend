@@ -44,4 +44,7 @@ export class CustomerService {
     const customer_id = localStorage.getItem('user_id');
     return this.httpClient.get(repairsUrls.allRepairs + customer_id);
   }
+  getAvancement() {
+    return this.httpClient.get(baseUrl + 'repairs/undone');
+  }
 }
