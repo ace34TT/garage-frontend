@@ -17,6 +17,7 @@ export class InsertPaymentComponent {
   myRepairId!: any;
 
   public pendingItems: Array<any>;
+  loader = false;
   constructor(
     private activatedRoute: ActivatedRoute,
     private service: WorkshopManagerService,
@@ -25,6 +26,7 @@ export class InsertPaymentComponent {
     this.pendingItems = [];
   }
   ngOnInit() {
+    this.loader = true;
     this.myCustomer_id =
       this.activatedRoute.snapshot.paramMap.get('customerId');
     this.myRepairId = this.activatedRoute.snapshot.paramMap.get('repairId');
@@ -39,6 +41,7 @@ export class InsertPaymentComponent {
       this.repairId = data.get('repairId');
     });
     this.getTab();
+    this.loader = false;
   }
   getTab() {
     this.service.getPayment(this.myCustomer_id, this.repairId).subscribe({
@@ -53,6 +56,7 @@ export class InsertPaymentComponent {
     });
   }
   submitInsert(data: any) {
+    this.loader = true;
     let insert = {
       customerId: this.myCustomer_id,
       repairId: this.repairId,
@@ -66,7 +70,8 @@ export class InsertPaymentComponent {
         console.log('error', error.status);
       },
       next: (response: any) => {
-        this.router.navigateByUrl('/financial-manager/repairs-unpaid');
+        this.ngOnInit();
+        // this.router.navigateByUrl('/financial-manager/repairs-unpaid');
       },
     });
   }

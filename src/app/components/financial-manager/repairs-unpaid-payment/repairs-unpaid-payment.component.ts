@@ -8,19 +8,25 @@ import { WorkshopManagerService } from 'src/app/services/workshop-manager/worksh
   styleUrls: ['./repairs-unpaid-payment.component.scss'],
 })
 export class RepairsUnpaidPaymentComponent {
-  repairs!: any;
+  repairs: any[];
+  loader = false;
   constructor(
     private workshopManagerService: WorkshopManagerService,
     private router: Router
-  ) {}
+  ) {
+    this.repairs = [];
+  }
   ngOnInit() {
+    this.loader = true;
     this.workshopManagerService.getRepairsUnpaid().subscribe({
       complete: () => {},
       error: (error) => {
         console.log('error', error.status);
       },
       next: (response) => {
-        this.repairs = response;
+        this.repairs = Object.values(response);
+        console.log(this.repairs);
+        this.loader = false;
       },
     });
   }
