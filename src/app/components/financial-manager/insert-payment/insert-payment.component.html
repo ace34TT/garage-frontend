@@ -105,40 +105,42 @@
           </form>
         </div>
         <hr />
-        <div class="relative overflow-x-auto">
-          <table
-            class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
-          >
-            <thead
-              class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
-            >
-              <tr>
-                <th scope="col" class="px-6 py-3">Price</th>
-                <th scope="col" class="px-6 py-3">Firstname</th>
-                <th scope="col" class="px-6 py-3">Lastname</th>
-                <th scope="col" class="px-6 py-3">registration number</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr
-                *ngFor="let toDo of pendingItems"
-                class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
-              >
-                <th
-                  scope="row"
-                  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                >
-                  {{ toDo.price }}
-                </th>
-                <td class="px-6 py-4">{{ toDo.firstname }}</td>
-                <td class="px-6 py-4">{{ toDo.lastname }}</td>
-                <td class="px-6 py-4">
-                  {{ toDo.registration_number }}
-                </td>
-              </tr>
-            </tbody>
-          </table>
+
+        <div *ngIf="loader; else content" class="mt-5 text-center">
+          <app-spinning-loader></app-spinning-loader>
         </div>
+        <ng-template #content>
+          <div class="relative overflow-x-auto">
+            <table
+              class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+            >
+              <thead
+                class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+              >
+                <tr>
+                  <th scope="col" class="px-6 py-3">Date</th>
+                  <th scope="col" class="px-6 py-3">Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  *ngFor="let payment of pendingItems"
+                  class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                >
+                  <th
+                    scope="row"
+                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                  >
+                    {{ payment.createdAt }}
+                  </th>
+                  <td class="px-6 py-4">
+                    {{ payment.amount }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </ng-template>
       </div>
     </div>
   </div>
