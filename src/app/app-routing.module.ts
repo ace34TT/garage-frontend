@@ -18,6 +18,7 @@ import { RepairsAdvancementComponent } from './components/customer/repairs-advan
 import { InsertPaymentComponent } from './components/financial-manager/insert-payment/insert-payment.component';
 import { RepairsUnpaidPaymentComponent } from './components/financial-manager/repairs-unpaid-payment/repairs-unpaid-payment.component';
 import { DetailsAdvancementComponent } from './components/customer/details-advancement/details-advancement.component';
+import { RetriveCarComponent } from './components/customer/retrive-car/retrive-car.component';
 
 const routes: Routes = [
   /*
@@ -41,6 +42,10 @@ const routes: Routes = [
       {
         path: 'advancement-details/:customerId/:repairId',
         component: DetailsAdvancementComponent,
+      },
+      {
+        path: 'retrieve-car',
+        component: RetriveCarComponent,
       },
     ],
   },

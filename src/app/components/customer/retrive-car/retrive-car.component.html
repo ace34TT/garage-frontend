@@ -1,0 +1,65 @@
+<div class="flex flex-wrap">
+  <div class="w-full px-4">
+    <div>
+      <div
+        class="relative flex flex-col min-w-0 break-words bg-slate-100 w-full mb-6 shadow-md rounded"
+      >
+        <div class="rounded-t bg-white mb-0 px-6 py-6">
+          <div class="text-center flex justify-between">
+            <h6 class="text-blueGray-700 text-xl font-bold">Retrievable car</h6>
+          </div>
+        </div>
+        <div class="relative overflow-x-auto">
+          <table
+            class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+          >
+            <thead
+              class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+            >
+              <tr>
+                <th scope="col" class="px-6 py-3">brand</th>
+                <th scope="col" class="px-6 py-3">model</th>
+                <th scope="col" class="px-6 py-3">registration number</th>
+                <th scope="col" class="px-6 py-3">Total Amount</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <ng-container
+                *ngFor="let repair of car[0].repairs; let i = index"
+              >
+                <tr
+                  class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                >
+                  <td class="px-6 py-4">
+                    {{ repair.car.brand }}
+                  </td>
+
+                  <td class="px-6 py-4">
+                    {{ repair.car.model }}
+                  </td>
+
+                  <td class="px-6 py-4">
+                    {{ repair.car.registration_number }}
+                  </td>
+                  <td class="px-6 py-4">
+                    {{ repair.total_amount }}
+                  </td>
+                  <td class="px-6 py-4">
+                    <button
+                      *ngIf="repair.is_retrieved === true"
+                      (click)="recover(repair._id)"
+                      class="bg-green-400 text-white active:bg-green-400 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+                    >
+                      recover
+                    </button>
+                  </td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
