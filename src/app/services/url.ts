@@ -9,4 +9,6 @@ export const repairsUrls = {
   // * undone toto
   undoneTodo: baseUrl + repairsUrl + 'todo/undone',
   confirmTodo: baseUrl + repairsUrl + 'todo/',
+  // * all repairs
+  allRepairs: baseUrl + repairsUrl + 'customer/',
 };

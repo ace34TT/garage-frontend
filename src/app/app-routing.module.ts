@@ -1,3 +1,4 @@
+import { BillComponent } from './components/customer/bill/bill.component';
 import { RepairsOnProcessComponent } from './components/workshop-manager/repairs-on-process/repairs-on-process.component';
 import { UnpaidRepairsComponent } from './components/customer/unpaid-repairs/unpaid-repairs.component';
 import { UnconfirmedRepairsComponent } from './components/workshop-manager/unconfirmed-repairs/unconfirmed-repairs.component';
@@ -32,6 +33,7 @@ const routes: Routes = [
     children: [
       { path: 'car-depot-form', component: CarDepotFormComponent },
       { path: 'unpaid-repairs', component: UnpaidRepairsComponent },
+      { path: 'bills', component: BillComponent },
       { path: 'advancement-repairs', component: RepairsAdvancementComponent },
     ],
   },
